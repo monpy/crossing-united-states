@@ -17,12 +17,25 @@
 
   <div class="wiki-layout">
     <!-- サイドバー（ページ一覧） -->
-    <nav class="wiki-sidebar" id="wiki-nav" aria-label="ページ一覧"></nav>
+    <nav class="wiki-sidebar" id="wiki-nav" aria-label="ページ一覧">
+      <p class="sidebar-label">ページ</p>
+      <div id="wiki-nav-list"></div>
+    </nav>
 
     <!-- 本文 -->
-    <article class="wiki-content" id="wiki-content">
-      <p>読み込み中…</p>
-    </article>
+    <main class="wiki-main">
+      <article class="wiki-content" id="wiki-content">
+        <p>読み込み中…</p>
+      </article>
+      <!-- 前後ページナビ -->
+      <nav class="page-nav" id="page-nav" aria-label="前後のページ"></nav>
+    </main>
+
+    <!-- 右：ページ内目次 -->
+    <aside class="wiki-toc" id="wiki-toc" aria-label="このページの目次">
+      <p class="toc-label">このページの目次</p>
+      <nav id="toc-list"></nav>
+    </aside>
   </div>
 
   <button class="sidebar-toggle" id="sidebar-toggle" aria-label="メニュー">☰</button>
