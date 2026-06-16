@@ -1,0 +1,12 @@
+{
+  "title": "アメリカ横断 Wiki",
+  "pages": [
+    { "slug": "overview", "title": "📄 概要", "file": "content/00-overview.md" },
+    { "slug": "car", "title": "🚗 レンタル車", "file": "content/01-car.md" },
+    { "slug": "route", "title": "🗺️ 毎日のルート", "file": "content/02-route.md" },
+    { "slug": "events", "title": "🎪 イベント", "file": "content/03-events.md" },
+    { "slug": "costs", "title": "💰 費用（節約）", "file": "content/04-costs.md" },
+    { "slug": "checklist", "title": "🎒 必要なもの", "file": "content/05-checklist.md" },
+    { "slug": "driving", "title": "🛣️ 運転のコツ", "file": "content/06-driving.md" }
+  ]
+}
