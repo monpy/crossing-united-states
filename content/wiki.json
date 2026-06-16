@@ -7,6 +7,7 @@
     { "slug": "events", "title": "🎪 イベント", "file": "content/03-events.md" },
     { "slug": "costs", "title": "💰 費用（節約）", "file": "content/04-costs.md" },
     { "slug": "checklist", "title": "🎒 必要なもの", "file": "content/05-checklist.md" },
-    { "slug": "driving", "title": "🛣️ 運転のコツ", "file": "content/06-driving.md" }
+    { "slug": "driving", "title": "🛣️ 運転のコツ", "file": "content/06-driving.md" },
+    { "slug": "resources", "title": "🔗 宿・給油リンク集", "file": "content/07-resources.md" }
   ]
 }
