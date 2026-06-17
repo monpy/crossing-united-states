@@ -54,11 +54,57 @@
 
   let scrollSpyHandler = null;
 
+  // ---- BGM（特定ページだけ自動再生） ----
+  const ANTHEM_URL =
+    "https://upload.wikimedia.org/wikipedia/commons/2/25/%22The_Star-Spangled_Banner%22_performed_by_the_United_States_Navy_Band.mp3";
+  let anthem = null;
+  let anthemPending = null;
+
+  function clearAnthemPending() {
+    if (anthemPending) {
+      window.removeEventListener("click", anthemPending);
+      window.removeEventListener("keydown", anthemPending);
+      anthemPending = null;
+    }
+  }
+
+  function handleAnthem(slug) {
+    if (slug === "trump") {
+      if (!anthem) {
+        anthem = new Audio(ANTHEM_URL);
+        anthem.loop = true;
+        anthem.volume = 0.6;
+      }
+      const p = anthem.play();
+      if (p && p.catch) {
+        // 直リンクで開くなど、ユーザー操作前で自動再生が弾かれた場合は
+        // 最初のクリック/キー操作で再生開始する
+        p.catch(() => {
+          if (anthemPending) return;
+          anthemPending = () => {
+            clearAnthemPending();
+            if (currentSlug() === "trump") anthem.play().catch(() => {});
+          };
+          window.addEventListener("click", anthemPending, { once: true });
+          window.addEventListener("keydown", anthemPending, { once: true });
+        });
+      }
+    } else {
+      clearAnthemPending();
+      if (anthem) {
+        anthem.pause();
+        anthem.currentTime = 0;
+      }
+    }
+  }
+
   async function render() {
     const slug = currentSlug();
     const idx = pages.findIndex((p) => p.slug === slug);
     const page = idx >= 0 ? pages[idx] : pages[0];
     if (!page) return;
+
+    handleAnthem(page.slug);
 
     // サイドバーのアクティブ表示
     navListEl.querySelectorAll("a").forEach((a) =>
