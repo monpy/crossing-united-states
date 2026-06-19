@@ -20,6 +20,19 @@
   const activeCats = new Set(Object.keys(cats));
   let routeOnly = false;
 
+  // ---- AIに聞く（ChatGPT / Claude） ----
+  function askPrompt(ev) {
+    const when = `${ev.month}月${phases[ev.phase] || ""}`;
+    return `アメリカ横断ドライブ旅行中に、イベント「${ev.name}」(${ev.en || ""}, ${ev.city}, ${ev.state}, アメリカ／${when}頃) に寄ろうか検討しています。今年の開催日程、チケットの要否と入手方法、見どころ、混雑や所要時間、近くのおすすめを教えてください。`;
+  }
+  function askLinksHtml(ev) {
+    const q = encodeURIComponent(askPrompt(ev));
+    return `<div class="ask-row">
+      <a class="ask-btn ask-gpt" href="https://chatgpt.com/?q=${q}" target="_blank" rel="noopener">🤖 ChatGPTに聞く</a>
+      <a class="ask-btn ask-claude" href="https://claude.ai/new?q=${q}" target="_blank" rel="noopener">✳️ Claudeに聞く</a>
+    </div>`;
+  }
+
   // ---- 地図 ----
   const map = L.map("map", { scrollWheelZoom: true });
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -42,7 +55,7 @@
     const when = `${ev.month}月${phases[ev.phase] || ""}`;
     const m = L.marker([ev.lat, ev.lng], { icon: dot(color, ev.near) });
     m.bindPopup(
-      `<strong>${ev.name}</strong>${ev.near ? ' <span style="color:#c1442e">★ルート沿い</span>' : ""}<br><small>${when}・${ev.city}（${ev.state}）</small><br>${ev.desc || ""}`
+      `<strong>${ev.name}</strong>${ev.near ? ' <span style="color:#c1442e">★ルート沿い</span>' : ""}<br><small>${when}・${ev.city}（${ev.state}）</small><br>${ev.desc || ""}${askLinksHtml(ev)}`
     );
     ev._marker = m;
     ev._when = when;
@@ -119,11 +132,15 @@
           <div class="spot-name">${ev.name} ${ev.near ? '<span class="route-badge">ルート沿い</span>' : ""}</div>
           <div class="spot-en">${ev.en || ""} ・ ${ev.city}（${ev.state}）</div>
           <div class="spot-desc">${ev.desc || ""}</div>
+          ${askLinksHtml(ev)}
         </div>`;
       row.addEventListener("click", () => {
         map.setView([ev.lat, ev.lng], 7, { animate: true });
         ev._marker.openPopup();
       });
+      row.querySelectorAll(".ask-btn").forEach((b) =>
+        b.addEventListener("click", (e) => e.stopPropagation())
+      );
       listEl.appendChild(row);
     });
 

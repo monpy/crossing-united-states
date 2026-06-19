@@ -44,6 +44,16 @@
 
   let routeOnly = false;
 
+  // ---- AIに聞く（ChatGPT / Claude） ----
+  function askLinksHtml(st) {
+    const prompt = `アメリカ横断ドライブ旅行で${st.ja}(${st.en}, アメリカ)を通ります。旅行者として知っておくべき治安の注意点、必見スポット、運転やベストシーズンのコツ、おすすめのご当地グルメを簡潔に教えてください。`;
+    const q = encodeURIComponent(prompt);
+    return `<div class="ask-row">
+      <a class="ask-btn ask-gpt" href="https://chatgpt.com/?q=${q}" target="_blank" rel="noopener">🤖 ChatGPTに聞く</a>
+      <a class="ask-btn ask-claude" href="https://claude.ai/new?q=${q}" target="_blank" rel="noopener">✳️ Claudeに聞く</a>
+    </div>`;
+  }
+
   function render() {
     container.innerHTML = "";
 
@@ -89,7 +99,8 @@
           <div class="state-spots-wrap">
             <p class="state-spots-label">この州のスポット（${stSpots.length}）</p>
             ${spotsHtml}
-          </div>`;
+          </div>
+          ${askLinksHtml(st)}`;
         grid.appendChild(card);
       });
 
