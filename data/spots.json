@@ -2442,6 +2442,256 @@
       "lng": -82.54,
       "desc": "渓谷と滝の人気サイト。中西部の癒し。",
       "beta": false
+    },
+    {
+      "cat": "camp",
+      "name": "バレー・オブ・ザ・ゴッズ",
+      "nameEn": "Valley of the Gods",
+      "state": "UT",
+      "lat": 37.258,
+      "lng": -109.885,
+      "desc": "【無料】ミニ・モニュメントバレーを独り占めできる人気の無料地。",
+      "beta": true
+    },
+    {
+      "cat": "camp",
+      "name": "シャドウ・マウンテン（ティトン）",
+      "nameEn": "Shadow Mountain, Grand Teton",
+      "state": "WY",
+      "lat": 43.693,
+      "lng": -110.623,
+      "desc": "【無料】テトン連峰を正面に望む名物の無料ディスパースド。",
+      "beta": true
+    },
+    {
+      "cat": "camp",
+      "name": "アルストロム・ポイント",
+      "nameEn": "Alstrom Point",
+      "state": "AZ",
+      "lat": 37.07,
+      "lng": -111.43,
+      "desc": "【無料・要4WD】パウエル湖を見下ろす絶景オーバールック。",
+      "beta": true
+    },
+    {
+      "cat": "camp",
+      "name": "ホワイト・ポケット",
+      "nameEn": "White Pocket",
+      "state": "AZ",
+      "lat": 36.96,
+      "lng": -111.9,
+      "desc": "【要4WD】The Waveに次ぐ奇景。許可不要の穴場。",
+      "beta": true
+    },
+    {
+      "cat": "camp",
+      "name": "ウィロー・スプリングス・ロード（モアブ）",
+      "nameEn": "Willow Springs Rd, Moab",
+      "state": "UT",
+      "lat": 38.69,
+      "lng": -109.69,
+      "desc": "【無料・BLM】アーチーズ至近の定番ディスパースド。",
+      "beta": false
+    },
+    {
+      "cat": "camp",
+      "name": "ケイン・クリーク・ロード（モアブ）",
+      "nameEn": "Kane Creek Rd, Moab",
+      "state": "UT",
+      "lat": 38.53,
+      "lng": -109.59,
+      "desc": "【無料・BLM】コロラド川沿いの無料サイト。",
+      "beta": false
+    },
+    {
+      "cat": "camp",
+      "name": "ジェミニ・ブリッジズ・ロード（モアブ）",
+      "nameEn": "Gemini Bridges Rd, Moab",
+      "state": "UT",
+      "lat": 38.62,
+      "lng": -109.79,
+      "desc": "【無料・BLM】岩と眺望のディスパースド。",
+      "beta": false
+    },
+    {
+      "cat": "camp",
+      "name": "サンド・フラッツ・レクリエーションエリア",
+      "nameEn": "Sand Flats Rec Area, Moab",
+      "state": "UT",
+      "lat": 38.58,
+      "lng": -109.5,
+      "desc": "スリックロックの聖地。低料金で泊まれる。",
+      "beta": false
+    },
+    {
+      "cat": "camp",
+      "name": "ハウスロック・バレー・ロード",
+      "nameEn": "House Rock Valley Rd",
+      "state": "AZ",
+      "lat": 36.99,
+      "lng": -111.9,
+      "desc": "【無料・BLM】The Wave周辺の無料地。",
+      "beta": false
+    },
+    {
+      "cat": "camp",
+      "name": "トードストゥール・フードゥー（大階段）",
+      "nameEn": "Toadstool Hoodoos",
+      "state": "UT",
+      "lat": 37.105,
+      "lng": -111.875,
+      "desc": "【無料】奇岩フードゥーが点在する荒野。",
+      "beta": false
+    },
+    {
+      "cat": "camp",
+      "name": "ミューリー・ポイント",
+      "nameEn": "Muley Point",
+      "state": "UT",
+      "lat": 37.24,
+      "lng": -109.99,
+      "desc": "【無料】サンファン川の大蛇行を見下ろす崖上。",
+      "beta": false
+    },
+    {
+      "cat": "camp",
+      "name": "グースネックス州立公園",
+      "nameEn": "Goosenecks State Park",
+      "state": "UT",
+      "lat": 37.174,
+      "lng": -109.926,
+      "desc": "川の蛇行を望む絶景。格安サイト。",
+      "beta": false
+    },
+    {
+      "cat": "camp",
+      "name": "シーダーメサ／ベアーズイヤーズ",
+      "nameEn": "Cedar Mesa / Bears Ears",
+      "state": "UT",
+      "lat": 37.5,
+      "lng": -109.9,
+      "desc": "【無料】先住民遺跡が眠る静かな台地。",
+      "beta": false
+    },
+    {
+      "cat": "camp",
+      "name": "カテドラル・バレー（キャピトルリーフ）",
+      "nameEn": "Cathedral Valley",
+      "state": "UT",
+      "lat": 38.4,
+      "lng": -111.4,
+      "desc": "【無料・要4WD】孤独な巨岩がそびえる谷。",
+      "beta": false
+    },
+    {
+      "cat": "camp",
+      "name": "コットンウッド・キャニオン・ロード",
+      "nameEn": "Cottonwood Canyon Rd",
+      "state": "UT",
+      "lat": 37.4,
+      "lng": -111.9,
+      "desc": "【無料】未舗装の絶景ロード沿いに点在。",
+      "beta": false
+    },
+    {
+      "cat": "camp",
+      "name": "スノー・キャニオン周辺",
+      "nameEn": "Snow Canyon area",
+      "state": "UT",
+      "lat": 37.21,
+      "lng": -113.64,
+      "desc": "赤白の砂岩。ザイオン近郊の穴場。",
+      "beta": false
+    },
+    {
+      "cat": "camp",
+      "name": "ボンネビル・ソルトフラッツ脇",
+      "nameEn": "Bonneville Salt Flats",
+      "state": "UT",
+      "lat": 40.76,
+      "lng": -113.8,
+      "desc": "真っ白な塩平原の脇で野営。",
+      "beta": false
+    },
+    {
+      "cat": "camp",
+      "name": "ココニノ国有林（セドナ/フラッグスタッフ）",
+      "nameEn": "Coconino NF dispersed",
+      "state": "AZ",
+      "lat": 35.0,
+      "lng": -111.7,
+      "desc": "【無料】赤い岩の国有林ディスパースド。",
+      "beta": false
+    },
+    {
+      "cat": "camp",
+      "name": "カイバブ国有林（北壁）",
+      "nameEn": "Kaibab NF",
+      "state": "AZ",
+      "lat": 36.4,
+      "lng": -112.1,
+      "desc": "【無料】グランドキャニオン北壁近くの森。",
+      "beta": false
+    },
+    {
+      "cat": "camp",
+      "name": "ホットウェル・デューンズ（BLM）",
+      "nameEn": "Hot Well Dunes",
+      "state": "AZ",
+      "lat": 32.76,
+      "lng": -109.6,
+      "desc": "【無料】砂丘と温泉のBLM穴場。",
+      "beta": false
+    },
+    {
+      "cat": "camp",
+      "name": "モハーベ国立保護区",
+      "nameEn": "Mojave National Preserve",
+      "state": "CA",
+      "lat": 35.1,
+      "lng": -115.5,
+      "desc": "【無料】砂漠の静寂と満天の星。",
+      "beta": false
+    },
+    {
+      "cat": "camp",
+      "name": "ジョシュアツリー南（BLM）",
+      "nameEn": "Joshua Tree South BLM",
+      "state": "CA",
+      "lat": 33.7,
+      "lng": -115.8,
+      "desc": "【無料】公園南口のBLM無料地。",
+      "beta": false
+    },
+    {
+      "cat": "camp",
+      "name": "ナシミエント・ファーガソン（ビッグサー山側）",
+      "nameEn": "Nacimiento-Fergusson, Big Sur",
+      "state": "CA",
+      "lat": 35.99,
+      "lng": -121.4,
+      "desc": "【無料】ビッグサーの山側、国有林の無料地。",
+      "beta": false
+    },
+    {
+      "cat": "camp",
+      "name": "グレートベイスン国立公園",
+      "nameEn": "Great Basin NP",
+      "state": "NV",
+      "lat": 38.98,
+      "lng": -114.3,
+      "desc": "全米屈指の暗夜。空いている穴場の公園。",
+      "beta": false
+    },
+    {
+      "cat": "camp",
+      "name": "バッファローギャップ大草原",
+      "nameEn": "Buffalo Gap National Grassland",
+      "state": "SD",
+      "lat": 43.6,
+      "lng": -102.2,
+      "desc": "【無料】バッドランズ隣の大草原で野営。",
+      "beta": false
     }
   ]
 }
