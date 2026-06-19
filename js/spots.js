@@ -89,6 +89,19 @@
     filtersEl.appendChild(label);
   });
 
+  // ---- 旅程ルート表示トグル（既定OFF）----
+  const route = await window.RouteOverlay.create(map);
+  if (route.count) {
+    const routeLabel = document.createElement("label");
+    routeLabel.className = "filter-chip route-chip";
+    routeLabel.innerHTML = `<input type="checkbox" id="show-route" checked /> 🛣️ ルートを表示`;
+    routeLabel.querySelector("input").addEventListener("change", (e) => {
+      route.set(e.target.checked);
+    });
+    filtersEl.appendChild(routeLabel);
+    route.set(true); // 既定でON
+  }
+
   // ---- リスト＋地図の更新 ----
   const listEl = document.getElementById("spots-list");
   const countEl = document.getElementById("spots-count");

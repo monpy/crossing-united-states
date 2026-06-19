@@ -88,6 +88,19 @@
   });
   filtersEl.appendChild(routeLabel);
 
+  // ---- 旅程ルート表示トグル（既定OFF）----
+  const route = await window.RouteOverlay.create(map);
+  if (route.count) {
+    const showRouteLabel = document.createElement("label");
+    showRouteLabel.className = "filter-chip route-chip";
+    showRouteLabel.innerHTML = `<input type="checkbox" id="show-route" checked /> 🛣️ ルート線を表示`;
+    showRouteLabel.querySelector("input").addEventListener("change", (e) => {
+      route.set(e.target.checked);
+    });
+    filtersEl.appendChild(showRouteLabel);
+    route.set(true); // 既定でON
+  }
+
   // ---- 更新 ----
   const listEl = document.getElementById("event-list");
   const countEl = document.getElementById("event-count");
