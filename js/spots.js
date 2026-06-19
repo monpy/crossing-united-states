@@ -76,6 +76,42 @@
     });
   }
 
+  // ---- ホバー画像（Wikipedia のサムネイルを必要になった時だけ取得）----
+  // s._thumb: undefined=未取得 / string=画像URL / null=画像なし
+  function loadThumb(s) {
+    if (s._thumb !== undefined) return Promise.resolve(s._thumb);
+    if (s._thumbP) return s._thumbP;
+    const q = s.nameEn || s.name;
+    const api =
+      "https://en.wikipedia.org/w/api.php?action=query&format=json&origin=*" +
+      "&prop=pageimages&piprop=thumbnail&pithumbsize=320&redirects=1" +
+      "&generator=search&gsrlimit=1&gsrsearch=" +
+      encodeURIComponent(q);
+    s._thumbP = fetch(api)
+      .then((r) => r.json())
+      .then((d) => {
+        const pages = d && d.query && d.query.pages;
+        const first = pages ? Object.values(pages)[0] : null;
+        s._thumb = (first && first.thumbnail && first.thumbnail.source) || null;
+        return s._thumb;
+      })
+      .catch(() => {
+        s._thumb = null;
+        return null;
+      });
+    return s._thumbP;
+  }
+
+  // tooltip の中身（読み込み中 / 画像 / 画像なし の3状態）
+  function thumbHtml(s, state) {
+    let media;
+    if (state === "loading")
+      media = `<div class="thumb-ph">画像を読み込み中…</div>`;
+    else if (state) media = `<img src="${state}" alt="${s.name}" loading="lazy" />`;
+    else media = `<div class="thumb-ph">画像が見つかりませんでした</div>`;
+    return `<div class="thumb-name">${s.name}</div>${media}`;
+  }
+
   // スポットごとにマーカーを作成
   const markers = spots.map((s) => {
     const color = (cats[s.cat] || {}).color || "#666";
@@ -87,6 +123,20 @@
     m.bindPopup(
       `<strong>${s.name}</strong><br><small>${s.nameEn || ""}（${s.state || ""}）</small><br>${s.desc || ""}${askLinksHtml(s)}`
     );
+    // ホバーで画像つきツールチップ。初回ホバー時に画像を取りにいく。
+    m.bindTooltip(thumbHtml(s, "loading"), {
+      direction: "top",
+      offset: [0, -10],
+      opacity: 1,
+      className: "spot-thumb-tip",
+    });
+    m.on("mouseover", () => {
+      if (s._thumb !== undefined) {
+        m.setTooltipContent(thumbHtml(s, s._thumb));
+      } else {
+        loadThumb(s).then((url) => m.setTooltipContent(thumbHtml(s, url)));
+      }
+    });
     s._marker = m;
     return m;
   });

@@ -596,6 +596,42 @@ html, body {
 /* 地図ポップアップ内 */
 .leaflet-popup-content .ask-row { margin-top: 8px; }
 
+/* ホバー時の画像つきツールチップ（Leafletデフォルト枠を上書き）*/
+.leaflet-tooltip.spot-thumb-tip {
+  padding: 0;
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  white-space: normal;
+  width: 240px;
+}
+.leaflet-tooltip.spot-thumb-tip::before { display: none; } /* 吹き出しの三角を消す */
+.spot-thumb-tip .thumb-name {
+  font-weight: 700;
+  font-size: 0.82rem;
+  padding: 7px 10px;
+  line-height: 1.3;
+}
+.spot-thumb-tip img {
+  display: block;
+  width: 240px;
+  height: 150px;
+  object-fit: cover;
+  background: #f0ece4;
+}
+.spot-thumb-tip .thumb-ph {
+  width: 240px;
+  height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.78rem;
+  color: var(--muted);
+  background: #f0ece4;
+}
+
 .spot-name { font-weight: 700; font-size: 0.92rem; }
 .spot-state { font-size: 0.72rem; color: var(--muted); font-weight: 400; }
 .spot-en { font-size: 0.78rem; color: var(--muted); }
