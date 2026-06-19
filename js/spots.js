@@ -21,6 +21,27 @@
   // 表示中のカテゴリ（初期は全部ON）
   const active = new Set(Object.keys(cats));
 
+  // ---- AIに聞く（ChatGPT / Claude） ----
+  // スポット名を入れた質問文を作り、?q= で自動入力された状態で開く。
+  function askPrompt(s) {
+    return `アメリカ横断ドライブ旅行で「${s.name}」(${s.nameEn || ""}, ${s.state || ""}, アメリカ) を訪れる予定です。見どころ、平均的な滞在時間、ベストな訪問時間帯や季節、入場料・予約の要否、近くのおすすめ、注意点を簡潔に教えてください。`;
+  }
+  function askUrls(s) {
+    const q = encodeURIComponent(askPrompt(s));
+    return {
+      chatgpt: `https://chatgpt.com/?q=${q}`,
+      claude: `https://claude.ai/new?q=${q}`,
+    };
+  }
+  // 一覧の行に差し込むHTML（リンクは新規タブで開く）
+  function askLinksHtml(s) {
+    const u = askUrls(s);
+    return `<div class="ask-row">
+      <a class="ask-btn ask-gpt" href="${u.chatgpt}" target="_blank" rel="noopener">🤖 ChatGPTに聞く</a>
+      <a class="ask-btn ask-claude" href="${u.claude}" target="_blank" rel="noopener">✳️ Claudeに聞く</a>
+    </div>`;
+  }
+
   // ---- 地図 ----
   const map = L.map("map", { scrollWheelZoom: true });
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -43,7 +64,7 @@
     const color = (cats[s.cat] || {}).color || "#666";
     const m = L.marker([s.lat, s.lng], { icon: dot(color) });
     m.bindPopup(
-      `<strong>${s.name}</strong><br><small>${s.nameEn || ""}（${s.state || ""}）</small><br>${s.desc || ""}`
+      `<strong>${s.name}</strong><br><small>${s.nameEn || ""}（${s.state || ""}）</small><br>${s.desc || ""}${askLinksHtml(s)}`
     );
     s._marker = m;
     return m;
@@ -101,11 +122,16 @@
             <div class="spot-name">${s.name} <span class="spot-state">${s.state || ""}</span></div>
             <div class="spot-en">${s.nameEn || ""}</div>
             <div class="spot-desc">${s.desc || ""}</div>
+            ${askLinksHtml(s)}
           </div>`;
         row.addEventListener("click", () => {
           map.setView([s.lat, s.lng], 8, { animate: true });
           s._marker.openPopup();
         });
+        // AIボタンのクリックでは地図フォーカスを発火させない
+        row.querySelectorAll(".ask-btn").forEach((b) =>
+          b.addEventListener("click", (e) => e.stopPropagation())
+        );
         group.appendChild(row);
       });
       listEl.appendChild(group);

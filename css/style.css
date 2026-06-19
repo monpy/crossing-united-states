@@ -490,6 +490,27 @@ html, body {
   border-radius: 50%;
   margin-top: 5px;
 }
+/* AIに聞くボタン */
+.ask-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+.ask-btn {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 14px;
+  text-decoration: none;
+  border: 1px solid var(--line);
+  white-space: nowrap;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.ask-gpt { color: #0d8a6a; border-color: #aee0d2; background: #effbf6; }
+.ask-gpt:hover { background: #d8f3e8; }
+.ask-claude { color: #b5532a; border-color: #f0c9b6; background: #fdf2ec; }
+.ask-claude:hover { background: #fae2d4; }
+/* 地図ポップアップ内 */
+.leaflet-popup-content .ask-row { margin-top: 8px; }
+
 .spot-name { font-weight: 700; font-size: 0.92rem; }
 .spot-state { font-size: 0.72rem; color: var(--muted); font-weight: 400; }
 .spot-en { font-size: 0.78rem; color: var(--muted); }
