@@ -38,6 +38,23 @@
     }
   }
 
+  // ---- みんなが行きたいリスト（data/must.json・手編集の共有リスト）----
+  // spotKey(name__state) → { by:[名前...], note }
+  const mustMap = new Map();
+  try {
+    const md = await (await fetch("data/must.json")).json();
+    (md.must || []).forEach((m) => {
+      mustMap.set(`${m.name}__${m.state || ""}`, {
+        by: m.by || [],
+        note: m.note || "",
+      });
+    });
+  } catch (e) {
+    /* must.json が無くても通常表示で動く */
+  }
+  const mustOf = (s) => mustMap.get(spotKey(s));
+  let mustOnly = false;
+
   // ---- AIに聞く（ChatGPT / Claude） ----
   // スポット名を入れた質問文を作り、?q= で自動入力された状態で開く。
   function askPrompt(s) {
@@ -67,13 +84,23 @@
   }).addTo(map);
   map.setView([39.5, -98.35], 4); // アメリカ全体
 
-  function dot(color, isSel) {
+  function dot(color, isSel, isMust) {
     return L.divIcon({
       className: "",
-      html: `<div class="spot-dot${isSel ? " selected" : ""}" style="background:${color}"></div>`,
+      html: `<div class="spot-dot${isSel ? " selected" : ""}${isMust ? " must" : ""}" style="background:${color}">${
+        isMust ? '<span class="must-star">★</span>' : ""
+      }</div>`,
       iconSize: [16, 16],
       iconAnchor: [8, 8],
     });
+  }
+  // みんなが行きたい情報をHTMLにする（ポップアップ/一覧で共用）
+  function mustBadgeHtml(s) {
+    const mi = mustOf(s);
+    if (!mi) return "";
+    const who = (mi.by || []).join("・");
+    const note = mi.note ? `<span class="must-note">「${mi.note}」</span>` : "";
+    return `<div class="must-tag">★ 行きたい${who ? `：${who}（${mi.by.length}）` : ""}${note}</div>`;
   }
 
   // ---- ホバー画像（Wikipedia のサムネイルを必要になった時だけ取得）----
@@ -116,12 +143,13 @@
   const markers = spots.map((s) => {
     const color = (cats[s.cat] || {}).color || "#666";
     const isSel = selected.has(spotKey(s));
+    const isMust = !!mustOf(s);
     const m = L.marker([s.lat, s.lng], {
-      icon: dot(color, isSel),
-      zIndexOffset: isSel ? 1000 : 0,
+      icon: dot(color, isSel, isMust),
+      zIndexOffset: isSel ? 1000 : isMust ? 500 : 0,
     });
     m.bindPopup(
-      `<strong>${s.name}</strong><br><small>${s.nameEn || ""}（${s.state || ""}）</small><br>${s.desc || ""}${askLinksHtml(s)}`
+      `<strong>${s.name}</strong><br><small>${s.nameEn || ""}（${s.state || ""}）</small>${mustBadgeHtml(s)}<br>${s.desc || ""}${askLinksHtml(s)}`
     );
     // ホバーで画像つきツールチップ。初回ホバー時に画像を取りにいく。
     m.bindTooltip(thumbHtml(s, "loading"), {
@@ -145,8 +173,9 @@
   function updateMarker(s) {
     const color = (cats[s.cat] || {}).color || "#666";
     const isSel = selected.has(spotKey(s));
-    s._marker.setIcon(dot(color, isSel));
-    s._marker.setZIndexOffset(isSel ? 1000 : 0);
+    const isMust = !!mustOf(s);
+    s._marker.setIcon(dot(color, isSel, isMust));
+    s._marker.setZIndexOffset(isSel ? 1000 : isMust ? 500 : 0);
   }
 
   // チェックON/OFF → 選択集合・保存・マーカー・カウンタを更新
@@ -190,6 +219,18 @@
     route.set(true); // 既定でON
   }
 
+  // ---- 「みんな行きたい」だけ表示トグル（must.json があれば）----
+  if (mustMap.size) {
+    const mustLabel = document.createElement("label");
+    mustLabel.className = "filter-chip must-chip";
+    mustLabel.innerHTML = `<input type="checkbox" id="must-only" /> ★ 行きたいリストだけ <span class="chip-count">${mustMap.size}</span>`;
+    mustLabel.querySelector("input").addEventListener("change", (e) => {
+      mustOnly = e.target.checked;
+      refresh();
+    });
+    filtersEl.appendChild(mustLabel);
+  }
+
   // ---- ルート候補カウンタ（フィルタ列の下段）----
   const selBar = document.createElement("div");
   selBar.className = "sel-bar";
@@ -215,10 +256,17 @@
   const listEl = document.getElementById("spots-list");
   const countEl = document.getElementById("spots-count");
 
+  // 表示対象か（カテゴリON ＆ 「行きたいだけ」モードなら must のみ）
+  function visible(s) {
+    if (!active.has(s.cat)) return false;
+    if (mustOnly && !mustOf(s)) return false;
+    return true;
+  }
+
   function refresh() {
     // マーカーの表示/非表示
     spots.forEach((s) => {
-      const shown = active.has(s.cat);
+      const shown = visible(s);
       if (shown && !map.hasLayer(s._marker)) s._marker.addTo(map);
       if (!shown && map.hasLayer(s._marker)) map.removeLayer(s._marker);
     });
@@ -228,7 +276,8 @@
     let total = 0;
     Object.entries(cats).forEach(([key, c]) => {
       if (!active.has(key)) return;
-      const items = spots.filter((s) => s.cat === key);
+      const items = spots.filter((s) => s.cat === key && visible(s));
+      if (!items.length) return;
       total += items.length;
 
       const group = document.createElement("div");
@@ -237,14 +286,17 @@
 
       items.forEach((s) => {
         const isSel = selected.has(spotKey(s));
+        const isMust = !!mustOf(s);
         const row = document.createElement("div");
-        row.className = "spot-row" + (isSel ? " selected" : "");
+        row.className =
+          "spot-row" + (isSel ? " selected" : "") + (isMust ? " is-must" : "");
         row.innerHTML = `
           <input type="checkbox" class="spot-check" ${isSel ? "checked" : ""} aria-label="ルート候補に追加" title="ルートに含めたいスポットとして選択" />
           <span class="spot-bullet" style="background:${c.color}"></span>
           <div>
             <div class="spot-name">${s.name} <span class="spot-state">${s.state || ""}</span></div>
             <div class="spot-en">${s.nameEn || ""}</div>
+            ${mustBadgeHtml(s)}
             <div class="spot-desc">${s.desc || ""}</div>
             ${askLinksHtml(s)}
           </div>`;

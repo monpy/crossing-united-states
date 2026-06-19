@@ -596,6 +596,39 @@ html, body {
 /* 地図ポップアップ内 */
 .leaflet-popup-content .ask-row { margin-top: 8px; }
 
+/* みんなが行きたい(must)スポット：地図ピンの★バッジ */
+.must-star {
+  position: absolute;
+  top: -9px;
+  right: -9px;
+  font-size: 12px;
+  line-height: 1;
+  color: #f5b301;
+  text-shadow: 0 0 2px #fff, 0 0 2px #fff, 0 1px 2px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+/* 一覧・ポップアップの「★行きたい」タグ */
+.must-tag {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #b5860b;
+  background: #fff7e0;
+  border: 1px solid #f3d98a;
+  border-radius: 6px;
+  padding: 2px 7px;
+  margin: 3px 0;
+}
+.must-tag .must-note { font-weight: 400; color: var(--muted); }
+.leaflet-popup-content .must-tag { margin: 6px 0; }
+.spot-row.is-must { background: #fffdf5; }
+.spot-row.is-must:hover { background: #fdf6e3; }
+.must-chip { font-weight: 700; }
+.must-chip input { accent-color: #f5b301; }
+
 /* ホバー時の画像つきツールチップ（Leafletデフォルト枠を上書き）*/
 .leaflet-tooltip.spot-thumb-tip {
   padding: 0;
