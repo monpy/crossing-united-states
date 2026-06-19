@@ -20,6 +20,12 @@
 
   // 表示中のカテゴリ（初期は全部ON）
   const active = new Set(Object.keys(cats));
+  let betaOnly = false;
+  function visible(s) {
+    if (!active.has(s.cat)) return false;
+    if (betaOnly && !s.beta) return false;
+    return true;
+  }
 
   // ---- AIに聞く（ChatGPT / Claude） ----
   // スポット名を入れた質問文を作り、?q= で自動入力された状態で開く。
@@ -50,10 +56,10 @@
   }).addTo(map);
   map.setView([39.5, -98.35], 4); // アメリカ全体
 
-  function dot(color) {
+  function dot(color, beta) {
     return L.divIcon({
       className: "",
-      html: `<div class="spot-dot" style="background:${color}"></div>`,
+      html: `<div class="spot-dot${beta ? " beta" : ""}" style="background:${color}"></div>`,
       iconSize: [16, 16],
       iconAnchor: [8, 8],
     });
@@ -98,9 +104,9 @@
   // スポットごとにマーカーを作成
   spots.forEach((s) => {
     const color = (cats[s.cat] || {}).color || "#666";
-    const m = L.marker([s.lat, s.lng], { icon: dot(color) });
+    const m = L.marker([s.lat, s.lng], { icon: dot(color, s.beta) });
     m.bindPopup(
-      `<strong>${s.name}</strong><br><small>${s.nameEn || ""}（${s.state || ""}）</small><br>${s.desc || ""}${askLinksHtml(s)}`
+      `<strong>${s.name}</strong>${s.beta ? ' <span class="beta-badge">ベタ</span>' : ""}<br><small>${s.nameEn || ""}（${s.state || ""}）</small><br>${s.desc || ""}${askLinksHtml(s)}`
     );
     // ホバーで画像つきツールチップ。初回ホバー時に画像を取りにいく。
     m.bindTooltip(thumbHtml(s, "loading"), {
@@ -151,6 +157,17 @@
     route.set(true); // 既定でON
   }
 
+  // ---- 「ベタだけ」トグル ----
+  const betaCount = spots.filter((s) => s.beta).length;
+  const betaLabel = document.createElement("label");
+  betaLabel.className = "filter-chip route-chip";
+  betaLabel.innerHTML = `<input type="checkbox" id="beta-only" /> ⭐ ベタだけ <span class="chip-count">${betaCount}</span>`;
+  betaLabel.querySelector("input").addEventListener("change", (e) => {
+    betaOnly = e.target.checked;
+    refresh();
+  });
+  filtersEl.appendChild(betaLabel);
+
   // ---- リスト＋地図の更新 ----
   const listEl = document.getElementById("spots-list");
   const countEl = document.getElementById("spots-count");
@@ -158,7 +175,7 @@
   function refresh() {
     // マーカーの表示/非表示
     spots.forEach((s) => {
-      const shown = active.has(s.cat);
+      const shown = visible(s);
       if (shown && !map.hasLayer(s._marker)) s._marker.addTo(map);
       if (!shown && map.hasLayer(s._marker)) map.removeLayer(s._marker);
     });
@@ -168,7 +185,8 @@
     let total = 0;
     Object.entries(cats).forEach(([key, c]) => {
       if (!active.has(key)) return;
-      const items = spots.filter((s) => s.cat === key);
+      const items = spots.filter((s) => s.cat === key && visible(s));
+      if (!items.length) return;
       total += items.length;
 
       const group = document.createElement("div");
@@ -181,7 +199,7 @@
         row.innerHTML = `
           <span class="spot-bullet" style="background:${c.color}"></span>
           <div>
-            <div class="spot-name">${s.name} <span class="spot-state">${s.state || ""}</span></div>
+            <div class="spot-name">${s.name} ${s.beta ? '<span class="beta-badge">ベタ</span>' : ""}<span class="spot-state">${s.state || ""}</span></div>
             <div class="spot-en">${s.nameEn || ""}</div>
             <div class="spot-desc">${s.desc || ""}</div>
             ${askLinksHtml(s)}

@@ -464,6 +464,25 @@ html, body {
 .spot-dot.near {
   box-shadow: 0 0 0 3px rgba(193, 68, 46, 0.9), 0 1px 3px rgba(0, 0, 0, 0.4);
 }
+/* ベタ（王道）スポットは金色のリング */
+.spot-dot.beta {
+  box-shadow: 0 0 0 3px #f6c700, 0 1px 3px rgba(0, 0, 0, 0.45);
+}
+
+/* ⭐ ベタ バッジ */
+.beta-badge {
+  display: inline-block;
+  background: #f6c700;
+  color: #5a4a00;
+  font-size: 0.66rem;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 10px;
+  margin-right: 4px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.beta-badge::before { content: "⭐ "; }
 
 /* ---- Foods: 画像サムネ ---- */
 .food-thumb {
