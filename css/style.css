@@ -395,8 +395,82 @@ html, body {
   cursor: pointer;
 }
 
+/* ---- Spots: filters ---- */
+.spots-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 10px 24px;
+  background: var(--panel-bg);
+  border-bottom: 1px solid var(--line);
+}
+.filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  user-select: none;
+}
+.filter-chip input { margin: 0; accent-color: var(--chip); }
+.chip-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.chip-count {
+  font-size: 0.72rem;
+  color: var(--muted);
+  background: var(--bg);
+  border-radius: 10px;
+  padding: 0 6px;
+}
+
+/* spotsページのヘッダー分だけ地図の高さを調整 */
+.spots-filters + .layout { height: calc(100vh - var(--header-h) - 53px); }
+
+/* ---- Spots: map markers ---- */
+.spot-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* ---- Spots: list ---- */
+.spot-group { margin-bottom: 18px; }
+.spot-group-title {
+  font-size: 0.95rem;
+  margin: 6px 0;
+  position: sticky;
+  top: 0;
+  background: var(--panel-bg);
+  padding: 4px 0;
+}
+.spot-row {
+  display: flex;
+  gap: 10px;
+  padding: 8px 6px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.spot-row:hover { background: #faf2ef; }
+.spot-bullet {
+  flex: 0 0 10px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-top: 5px;
+}
+.spot-name { font-weight: 700; font-size: 0.92rem; }
+.spot-state { font-size: 0.72rem; color: var(--muted); font-weight: 400; }
+.spot-en { font-size: 0.78rem; color: var(--muted); }
+.spot-desc { font-size: 0.82rem; margin-top: 2px; line-height: 1.45; }
+
 /* ---- Responsive ---- */
 @media (max-width: 760px) {
+  .spots-filters + .layout { height: auto; }
   .layout { flex-direction: column; height: auto; }
   #map { height: 55vh; flex-basis: auto; }
   .itinerary { flex-basis: auto; max-width: 100%; border-left: none; border-top: 1px solid var(--line); }

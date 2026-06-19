@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>観光スポット集 — アメリカ横断の旅</title>
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1><a href="index.html" class="home-link">アメリカ横断の旅</a></h1>
+    <nav class="top-nav">
+      <a href="index.html">🗺️ 地図</a>
+      <a href="spots.html" class="active">📍 スポット集</a>
+      <a href="wiki.html">📚 Wiki</a>
+    </nav>
+  </header>
+
+  <div class="spots-filters" id="spots-filters"></div>
+
+  <main class="layout">
+    <section id="map" aria-label="観光スポット地図"></section>
+    <aside class="itinerary" aria-label="スポット一覧">
+      <h2 id="spots-count">スポット一覧</h2>
+      <div id="spots-list"></div>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <p id="spots-note">Map data &copy; OpenStreetMap contributors</p>
+  </footer>
+
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+  ></script>
+  <script src="js/spots.js"></script>
+</body>
+</html>
