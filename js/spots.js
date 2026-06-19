@@ -21,6 +21,23 @@
   // 表示中のカテゴリ（初期は全部ON）
   const active = new Set(Object.keys(cats));
 
+  // ---- ルート候補の選択（localStorage に保存して再訪問でも保持）----
+  const LS_KEY = "selectedSpots";
+  const spotKey = (s) => `${s.name}__${s.state || ""}`;
+  let selected = new Set();
+  try {
+    selected = new Set(JSON.parse(localStorage.getItem(LS_KEY) || "[]"));
+  } catch (e) {
+    /* 壊れていたら空のまま */
+  }
+  function saveSelection() {
+    try {
+      localStorage.setItem(LS_KEY, JSON.stringify([...selected]));
+    } catch (e) {
+      /* プライベートモード等では保存できなくても続行 */
+    }
+  }
+
   // ---- AIに聞く（ChatGPT / Claude） ----
   // スポット名を入れた質問文を作り、?q= で自動入力された状態で開く。
   function askPrompt(s) {
@@ -50,10 +67,10 @@
   }).addTo(map);
   map.setView([39.5, -98.35], 4); // アメリカ全体
 
-  function dot(color) {
+  function dot(color, isSel) {
     return L.divIcon({
       className: "",
-      html: `<div class="spot-dot" style="background:${color}"></div>`,
+      html: `<div class="spot-dot${isSel ? " selected" : ""}" style="background:${color}"></div>`,
       iconSize: [16, 16],
       iconAnchor: [8, 8],
     });
@@ -62,13 +79,30 @@
   // スポットごとにマーカーを作成
   const markers = spots.map((s) => {
     const color = (cats[s.cat] || {}).color || "#666";
-    const m = L.marker([s.lat, s.lng], { icon: dot(color) });
+    const m = L.marker([s.lat, s.lng], {
+      icon: dot(color, selected.has(spotKey(s))),
+    });
     m.bindPopup(
       `<strong>${s.name}</strong><br><small>${s.nameEn || ""}（${s.state || ""}）</small><br>${s.desc || ""}${askLinksHtml(s)}`
     );
     s._marker = m;
     return m;
   });
+
+  // 選択状態に合わせてマーカーの見た目を更新（地図上/外を問わず動く）
+  function updateMarker(s) {
+    const color = (cats[s.cat] || {}).color || "#666";
+    s._marker.setIcon(dot(color, selected.has(spotKey(s))));
+  }
+
+  // チェックON/OFF → 選択集合・保存・マーカー・カウンタを更新
+  function toggleSelect(s, on) {
+    if (on) selected.add(spotKey(s));
+    else selected.delete(spotKey(s));
+    saveSelection();
+    updateMarker(s);
+    updateSelBar();
+  }
 
   // ---- カテゴリ・フィルタ ----
   const filtersEl = document.getElementById("spots-filters");
@@ -102,6 +136,27 @@
     route.set(true); // 既定でON
   }
 
+  // ---- ルート候補カウンタ（フィルタ列の下段）----
+  const selBar = document.createElement("div");
+  selBar.className = "sel-bar";
+  filtersEl.appendChild(selBar);
+  function updateSelBar() {
+    const n = selected.size;
+    selBar.innerHTML = n
+      ? `🧭 ルート候補 <strong>${n}</strong>件 <button type="button" class="sel-clear">クリア</button>`
+      : `🧭 一覧の☑でルートに含めたいスポットを選択`;
+    const btn = selBar.querySelector(".sel-clear");
+    if (btn)
+      btn.addEventListener("click", () => {
+        const cleared = spots.filter((s) => selected.has(spotKey(s)));
+        selected.clear();
+        saveSelection();
+        cleared.forEach(updateMarker);
+        updateSelBar();
+        refresh();
+      });
+  }
+
   // ---- リスト＋地図の更新 ----
   const listEl = document.getElementById("spots-list");
   const countEl = document.getElementById("spots-count");
@@ -127,9 +182,11 @@
       group.innerHTML = `<h3 class="spot-group-title" style="color:${c.color}">${c.label}（${items.length}）</h3>`;
 
       items.forEach((s) => {
+        const isSel = selected.has(spotKey(s));
         const row = document.createElement("div");
-        row.className = "spot-row";
+        row.className = "spot-row" + (isSel ? " selected" : "");
         row.innerHTML = `
+          <input type="checkbox" class="spot-check" ${isSel ? "checked" : ""} aria-label="ルート候補に追加" title="ルートに含めたいスポットとして選択" />
           <span class="spot-bullet" style="background:${c.color}"></span>
           <div>
             <div class="spot-name">${s.name} <span class="spot-state">${s.state || ""}</span></div>
@@ -145,6 +202,13 @@
         row.querySelectorAll(".ask-btn").forEach((b) =>
           b.addEventListener("click", (e) => e.stopPropagation())
         );
+        // チェックボックス：行クリック(地図フォーカス)とは独立に選択を切り替え
+        const cb = row.querySelector(".spot-check");
+        cb.addEventListener("click", (e) => e.stopPropagation());
+        cb.addEventListener("change", (e) => {
+          toggleSelect(s, e.target.checked);
+          row.classList.toggle("selected", e.target.checked);
+        });
         group.appendChild(row);
       });
       listEl.appendChild(group);
@@ -153,5 +217,6 @@
     countEl.textContent = `スポット一覧（${total}件）`;
   }
 
+  updateSelBar();
   refresh();
 })();
