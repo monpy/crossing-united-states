@@ -453,6 +453,7 @@ html, body {
 
 /* ---- Spots: map markers ---- */
 .spot-dot {
+  position: relative;
   width: 16px;
   height: 16px;
   border-radius: 50%;
@@ -463,10 +464,33 @@ html, body {
 .spot-dot.near {
   box-shadow: 0 0 0 3px rgba(193, 68, 46, 0.9), 0 1px 3px rgba(0, 0, 0, 0.4);
 }
-/* ルート候補に選択したスポットは二重リングで強調 */
+/* ルート候補に選択したスポットは脈打つ光のリングで強調 */
 .spot-dot.selected {
-  box-shadow: 0 0 0 3px #fff, 0 0 0 6px var(--accent), 0 1px 4px rgba(0, 0, 0, 0.5);
-  transform: scale(1.18);
+  box-shadow: 0 0 0 2px #fff, 0 0 6px 2px var(--accent), 0 1px 4px rgba(0, 0, 0, 0.5);
+  transform: scale(1.25);
+}
+/* 外側に広がって消えていく波紋（2本ずらして連続的に脈打たせる）*/
+.spot-dot.selected::before,
+.spot-dot.selected::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  animation: spot-pulse 1.6s cubic-bezier(0.2, 0.6, 0.3, 1) infinite;
+  pointer-events: none;
+}
+.spot-dot.selected::after { animation-delay: 0.8s; }
+@keyframes spot-pulse {
+  0%   { transform: scale(1);   opacity: 0.85; }
+  100% { transform: scale(3);   opacity: 0;    }
+}
+@media (prefers-reduced-motion: reduce) {
+  .spot-dot.selected::before,
+  .spot-dot.selected::after { animation: none; }
+  .spot-dot.selected {
+    box-shadow: 0 0 0 3px #fff, 0 0 0 6px var(--accent), 0 1px 4px rgba(0, 0, 0, 0.5);
+  }
 }
 
 /* ---- Events ---- */

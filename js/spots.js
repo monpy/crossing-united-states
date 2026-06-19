@@ -79,8 +79,10 @@
   // スポットごとにマーカーを作成
   const markers = spots.map((s) => {
     const color = (cats[s.cat] || {}).color || "#666";
+    const isSel = selected.has(spotKey(s));
     const m = L.marker([s.lat, s.lng], {
-      icon: dot(color, selected.has(spotKey(s))),
+      icon: dot(color, isSel),
+      zIndexOffset: isSel ? 1000 : 0,
     });
     m.bindPopup(
       `<strong>${s.name}</strong><br><small>${s.nameEn || ""}（${s.state || ""}）</small><br>${s.desc || ""}${askLinksHtml(s)}`
@@ -92,7 +94,9 @@
   // 選択状態に合わせてマーカーの見た目を更新（地図上/外を問わず動く）
   function updateMarker(s) {
     const color = (cats[s.cat] || {}).color || "#666";
-    s._marker.setIcon(dot(color, selected.has(spotKey(s))));
+    const isSel = selected.has(spotKey(s));
+    s._marker.setIcon(dot(color, isSel));
+    s._marker.setZIndexOffset(isSel ? 1000 : 0);
   }
 
   // チェックON/OFF → 選択集合・保存・マーカー・カウンタを更新
