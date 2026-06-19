@@ -468,6 +468,109 @@ html, body {
 .spot-en { font-size: 0.78rem; color: var(--muted); }
 .spot-desc { font-size: 0.82rem; margin-top: 2px; line-height: 1.45; }
 
+/* ---- States guide ---- */
+.states-body { background: var(--bg); }
+.states-main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 24px 80px;
+}
+.states-title {
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent-soft);
+  padding-bottom: 10px;
+}
+.states-disclaimer {
+  background: #fcf3e8;
+  border-left: 4px solid var(--accent-soft);
+  padding: 12px 16px;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #6b5b4b;
+  border-radius: 0 8px 8px 0;
+}
+.states-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin: 16px 0;
+}
+.route-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.legend { display: inline-flex; flex-wrap: wrap; gap: 12px; }
+.legend-item { display: inline-flex; align-items: center; gap: 5px; font-size: 0.78rem; color: var(--muted); }
+.legend-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+
+.region-section { margin-top: 28px; }
+.region-title {
+  color: var(--accent);
+  font-size: 1.15rem;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 6px;
+}
+.states-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+  margin-top: 14px;
+}
+.state-card {
+  background: var(--panel-bg);
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--safety);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+.state-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+}
+.state-name { font-size: 1.05rem; font-weight: 700; }
+.state-en { display: block; font-size: 0.75rem; color: var(--muted); }
+.route-badge {
+  flex-shrink: 0;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--accent);
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+.safety-badge {
+  display: inline-block;
+  margin: 8px 0;
+  padding: 3px 10px;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+.state-note { font-size: 0.83rem; line-height: 1.5; margin: 4px 0; }
+.state-known { font-size: 0.83rem; margin: 4px 0; }
+.state-spots-wrap { margin-top: 8px; border-top: 1px dashed var(--line); padding-top: 8px; }
+.state-spots-label { font-size: 0.72rem; color: var(--muted); font-weight: 700; margin: 0 0 4px; }
+.state-spots { list-style: none; margin: 0; padding: 0; }
+.state-spots li {
+  font-size: 0.85rem;
+  padding: 2px 0;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+.state-spot-dot { flex-shrink: 0; width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+.state-spot-en { font-size: 0.72rem; color: var(--muted); margin-left: 4px; }
+.state-nospot { font-size: 0.78rem; color: var(--muted); margin: 4px 0; }
+.state-nospot a { color: var(--accent); }
+
 /* ---- Responsive ---- */
 @media (max-width: 760px) {
   .spots-filters + .layout { height: auto; }

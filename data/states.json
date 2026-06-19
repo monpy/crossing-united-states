@@ -1,0 +1,74 @@
+{
+  "safetyLevels": {
+    "green":  { "label": "🟢 統計上は低犯罪", "color": "#2e7d32" },
+    "yellow": { "label": "🟡 平均的",         "color": "#c9a227" },
+    "orange": { "label": "🟠 都市部は犯罪率高め", "color": "#d2691e" }
+  },
+  "regions": {
+    "northeast": "北東部",
+    "south": "南部",
+    "midwest": "中西部",
+    "mountain": "山岳部・南西部",
+    "west": "西部・太平洋岸",
+    "noncontiguous": "アラスカ・ハワイ"
+  },
+  "disclaimer": "「安全度」は州全体の犯罪統計の大まかな傾向であり、観光地そのものの危険度ではありません。犯罪は都市部の特定地区に集中しがちで、国立公園や主要観光エリアは概ね安全です。夜間の人気のない場所・車上荒らし対策など基本的な注意は全州共通です。",
+  "states": [
+    { "abbr": "ME", "ja": "メイン州", "en": "Maine", "region": "northeast", "safety": "green", "route": false, "knownFor": "ロブスターと大西洋岸の自然", "note": "全米でも犯罪率が低い州のひとつ。" },
+    { "abbr": "NH", "ja": "ニューハンプシャー州", "en": "New Hampshire", "region": "northeast", "safety": "green", "route": false, "knownFor": "ホワイトマウンテンの紅葉", "note": "治安は良好。" },
+    { "abbr": "VT", "ja": "バーモント州", "en": "Vermont", "region": "northeast", "safety": "green", "route": false, "knownFor": "メープルと牧歌的な田園", "note": "全米屈指の低犯罪。" },
+    { "abbr": "MA", "ja": "マサチューセッツ州", "en": "Massachusetts", "region": "northeast", "safety": "green", "route": false, "knownFor": "ボストンの歴史と美術館、大学", "note": "大都市圏としては治安は比較的良い。" },
+    { "abbr": "RI", "ja": "ロードアイランド州", "en": "Rhode Island", "region": "northeast", "safety": "green", "route": false, "knownFor": "ニューポートの邸宅と音楽祭", "note": "小さく落ち着いた州。" },
+    { "abbr": "CT", "ja": "コネチカット州", "en": "Connecticut", "region": "northeast", "safety": "green", "route": false, "knownFor": "イェール大学と海沿いの町", "note": "概ね安全。一部都市の中心部のみ注意。" },
+    { "abbr": "NY", "ja": "ニューヨーク州", "en": "New York", "region": "northeast", "safety": "yellow", "route": true, "knownFor": "NYC、ナイアガラ、美術館の宝庫", "note": "NYC観光地は近年治安改善。地下鉄や夜間は基本的注意を。" },
+    { "abbr": "NJ", "ja": "ニュージャージー州", "en": "New Jersey", "region": "northeast", "safety": "green", "route": false, "knownFor": "海岸リゾートとNYC近郊", "note": "全体としては治安良好。" },
+    { "abbr": "PA", "ja": "ペンシルベニア州", "en": "Pennsylvania", "region": "northeast", "safety": "yellow", "route": true, "knownFor": "独立記念館、アーミッシュ", "note": "フィラデルフィア/ピッツバーグの一部地区は注意。横断の通過州。" },
+
+    { "abbr": "MD", "ja": "メリーランド州", "en": "Maryland", "region": "south", "safety": "orange", "route": false, "knownFor": "チェサピーク湾、首都近郊", "note": "ボルチモアの一部で犯罪率が高い。観光エリアは概ね安全。" },
+    { "abbr": "DE", "ja": "デラウェア州", "en": "Delaware", "region": "south", "safety": "yellow", "route": false, "knownFor": "免税ショッピングと海岸", "note": "小さな州。平均的。" },
+    { "abbr": "DC", "ja": "ワシントンD.C.", "en": "Washington, D.C.", "region": "south", "safety": "orange", "route": false, "knownFor": "スミソニアン（無料）と記念碑群", "note": "ナショナル・モール周辺は安全。一部地区は夜間注意。" },
+    { "abbr": "VA", "ja": "バージニア州", "en": "Virginia", "region": "south", "safety": "green", "route": false, "knownFor": "コロニアル史跡とブルーリッジ", "note": "治安は比較的良好。" },
+    { "abbr": "WV", "ja": "ウェストバージニア州", "en": "West Virginia", "region": "south", "safety": "yellow", "route": false, "knownFor": "アパラチアの山岳", "note": "暴力犯罪は少なめ。" },
+    { "abbr": "NC", "ja": "ノースカロライナ州", "en": "North Carolina", "region": "south", "safety": "yellow", "route": false, "knownFor": "スモーキー山脈とアウターバンクス", "note": "平均的。" },
+    { "abbr": "SC", "ja": "サウスカロライナ州", "en": "South Carolina", "region": "south", "safety": "orange", "route": false, "knownFor": "チャールストンの歴史地区", "note": "統計上は犯罪率高め。観光地は概ね安全。" },
+    { "abbr": "GA", "ja": "ジョージア州", "en": "Georgia", "region": "south", "safety": "yellow", "route": false, "knownFor": "アトランタ、公民権運動史、サバンナ", "note": "都市の一部地区は注意。" },
+    { "abbr": "FL", "ja": "フロリダ州", "en": "Florida", "region": "south", "safety": "yellow", "route": false, "knownFor": "エバーグレーズ、宇宙基地、ビーチ", "note": "観光地は人が多く概ね安全。" },
+    { "abbr": "KY", "ja": "ケンタッキー州", "en": "Kentucky", "region": "south", "safety": "yellow", "route": false, "knownFor": "マンモスケーブとバーボン", "note": "平均的。" },
+    { "abbr": "TN", "ja": "テネシー州", "en": "Tennessee", "region": "south", "safety": "orange", "route": false, "knownFor": "ナッシュビル/メンフィスの音楽", "note": "都市部で犯罪率高め。音楽観光地は賑わい安全。" },
+    { "abbr": "AL", "ja": "アラバマ州", "en": "Alabama", "region": "south", "safety": "orange", "route": false, "knownFor": "マッスルショールズの音楽、公民権史", "note": "統計上は高め。" },
+    { "abbr": "MS", "ja": "ミシシッピ州", "en": "Mississippi", "region": "south", "safety": "orange", "route": false, "knownFor": "デルタ・ブルース発祥", "note": "統計上は高め。田舎は穏やか。" },
+    { "abbr": "AR", "ja": "アーカンソー州", "en": "Arkansas", "region": "south", "safety": "orange", "route": false, "knownFor": "クリスタルブリッジズ美術館、温泉", "note": "統計上は高め。" },
+    { "abbr": "LA", "ja": "ルイジアナ州", "en": "Louisiana", "region": "south", "safety": "orange", "route": false, "knownFor": "ニューオーリンズのジャズとクレオール文化", "note": "NOの一部は犯罪率高め。観光地は人が多い。" },
+
+    { "abbr": "OH", "ja": "オハイオ州", "en": "Ohio", "region": "midwest", "safety": "yellow", "route": true, "knownFor": "ロックの殿堂（クリーブランド）", "note": "平均的。横断の通過州。" },
+    { "abbr": "MI", "ja": "ミシガン州", "en": "Michigan", "region": "midwest", "safety": "orange", "route": false, "knownFor": "モータウン、五大湖", "note": "デトロイトの一部は犯罪率高め。中心部は再開発が進む。" },
+    { "abbr": "IN", "ja": "インディアナ州", "en": "Indiana", "region": "midwest", "safety": "yellow", "route": true, "knownFor": "インディ500", "note": "平均的。横断の通過州。" },
+    { "abbr": "IL", "ja": "イリノイ州", "en": "Illinois", "region": "midwest", "safety": "yellow", "route": true, "knownFor": "シカゴの美術館と建築、ブルース", "note": "シカゴの特定地区を除けば観光エリアは安全。" },
+    { "abbr": "WI", "ja": "ウィスコンシン州", "en": "Wisconsin", "region": "midwest", "safety": "yellow", "route": false, "knownFor": "湖とチーズ、ミルウォーキー", "note": "平均的。" },
+    { "abbr": "MN", "ja": "ミネソタ州", "en": "Minnesota", "region": "midwest", "safety": "green", "route": false, "knownFor": "ウォーカー・アート・センター、湖", "note": "治安は比較的良好。" },
+    { "abbr": "IA", "ja": "アイオワ州", "en": "Iowa", "region": "midwest", "safety": "green", "route": true, "knownFor": "トウモロコシ畑の田園", "note": "低犯罪。横断の通過州。" },
+    { "abbr": "MO", "ja": "ミズーリ州", "en": "Missouri", "region": "midwest", "safety": "orange", "route": false, "knownFor": "ゲートウェイ・アーチ、ライブショーの街", "note": "都市部で犯罪率高め。" },
+    { "abbr": "ND", "ja": "ノースダコタ州", "en": "North Dakota", "region": "midwest", "safety": "green", "route": false, "knownFor": "大平原とバッドランズ", "note": "全米でも低犯罪。" },
+    { "abbr": "SD", "ja": "サウスダコタ州", "en": "South Dakota", "region": "midwest", "safety": "yellow", "route": false, "knownFor": "ラシュモア山、バッドランズ", "note": "平均的。観光地は安全。" },
+    { "abbr": "NE", "ja": "ネブラスカ州", "en": "Nebraska", "region": "midwest", "safety": "green", "route": true, "knownFor": "大平原、オマハ", "note": "低犯罪。横断の宿泊・給油拠点。" },
+    { "abbr": "KS", "ja": "カンザス州", "en": "Kansas", "region": "midwest", "safety": "yellow", "route": false, "knownFor": "大平原の真ん中", "note": "平均的。" },
+
+    { "abbr": "TX", "ja": "テキサス州", "en": "Texas", "region": "mountain", "safety": "yellow", "route": false, "knownFor": "オースティンの音楽、アラモ、マーファ", "note": "広大。都市の一部地区を除き観光は概ね安全。" },
+    { "abbr": "OK", "ja": "オクラホマ州", "en": "Oklahoma", "region": "mountain", "safety": "yellow", "route": false, "knownFor": "ルート66とカウボーイ文化", "note": "平均的。" },
+    { "abbr": "NM", "ja": "ニューメキシコ州", "en": "New Mexico", "region": "mountain", "safety": "orange", "route": false, "knownFor": "サンタフェの芸術、気球フェスタ、先住民文化", "note": "統計上は犯罪率高め。観光地は魅力的で人が多い。" },
+    { "abbr": "AZ", "ja": "アリゾナ州", "en": "Arizona", "region": "mountain", "safety": "yellow", "route": true, "knownFor": "グランドキャニオン、モニュメントバレー", "note": "平均的。砂漠は熱中症・給油に注意。横断ルート上。" },
+    { "abbr": "CO", "ja": "コロラド州", "en": "Colorado", "region": "mountain", "safety": "yellow", "route": true, "knownFor": "ロッキー山脈、デンバー、レッドロックス", "note": "平均的。横断ルート上。" },
+    { "abbr": "UT", "ja": "ユタ州", "en": "Utah", "region": "mountain", "safety": "green", "route": true, "knownFor": "ザイオン/ブライス/アーチーズの赤い大地", "note": "低犯罪。国立公園の宝庫。横断ルート上。" },
+    { "abbr": "NV", "ja": "ネバダ州", "en": "Nevada", "region": "mountain", "safety": "yellow", "route": true, "knownFor": "ラスベガス、砂漠", "note": "ラスベガスの観光エリアは警備が手厚い。横断ルート上。" },
+    { "abbr": "WY", "ja": "ワイオミング州", "en": "Wyoming", "region": "mountain", "safety": "green", "route": false, "knownFor": "イエローストーン、グランドティトン", "note": "人口希薄で低犯罪。" },
+    { "abbr": "MT", "ja": "モンタナ州", "en": "Montana", "region": "mountain", "safety": "yellow", "route": false, "knownFor": "グレイシャー国立公園", "note": "平均的。大自然と長距離運転。" },
+    { "abbr": "ID", "ja": "アイダホ州", "en": "Idaho", "region": "mountain", "safety": "green", "route": false, "knownFor": "山と渓谷、ジャガイモ", "note": "低犯罪。" },
+
+    { "abbr": "CA", "ja": "カリフォルニア州", "en": "California", "region": "west", "safety": "yellow", "route": true, "knownFor": "ヨセミテ、ビッグサー、SF/LA、美術館", "note": "観光地は賑わい安全。都市の一部や車上荒らしに注意。横断の出発州。" },
+    { "abbr": "OR", "ja": "オレゴン州", "en": "Oregon", "region": "west", "safety": "yellow", "route": false, "knownFor": "クレーターレイク、海岸線", "note": "ポートランド中心部の一部は注意。自然は穏やか。" },
+    { "abbr": "WA", "ja": "ワシントン州", "en": "Washington", "region": "west", "safety": "yellow", "route": false, "knownFor": "シアトル、オリンピック/レーニア国立公園", "note": "観光地は概ね安全。" },
+
+    { "abbr": "AK", "ja": "アラスカ州", "en": "Alaska", "region": "noncontiguous", "safety": "orange", "route": false, "knownFor": "デナリ、氷河、オーロラ", "note": "統計上は高めだが原因は地理・社会的要因。観光は野生動物・天候への備えが主。" },
+    { "abbr": "HI", "ja": "ハワイ州", "en": "Hawaii", "region": "noncontiguous", "safety": "green", "route": false, "knownFor": "火山、ビーチ、パールハーバー", "note": "暴力犯罪は少ない。車上荒らしには注意。" }
+  ]
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>州別ガイド — アメリカ横断の旅</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="states-body">
+  <header class="site-header">
+    <h1><a href="index.html" class="home-link">アメリカ横断の旅</a></h1>
+    <nav class="top-nav">
+      <a href="index.html">🗺️ 地図</a>
+      <a href="spots.html">📍 スポット集</a>
+      <a href="states.html" class="active">🇺🇸 州別</a>
+      <a href="wiki.html">📚 Wiki</a>
+    </nav>
+  </header>
+
+  <main class="states-main">
+    <h1 class="states-title">🇺🇸 全米50州＋D.C. 州別ガイド</h1>
+    <p class="states-disclaimer" id="states-disclaimer"></p>
+
+    <div class="states-controls" id="states-controls">
+      <label class="route-toggle">
+        <input type="checkbox" id="route-only" /> 横断ルート上の州だけ表示
+      </label>
+      <span class="legend" id="safety-legend"></span>
+    </div>
+
+    <div id="states-container"></div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Map data &copy; OpenStreetMap contributors</p>
+  </footer>
+
+  <script src="js/states.js"></script>
+</body>
+</html>
