@@ -3,6 +3,7 @@
   "must": [
     { "name": "ニューヨーク近代美術館", "state": "NY", "by": ["morio"], "note": "観たい" },
     { "name": "自由の女神＆エリス島", "state": "NY", "by": ["morio"], "note": "観たい" },
-    { "name": "グランドキャニオン国立公園", "state": "AZ", "by": ["morio"] }
+    { "name": "グランドキャニオン国立公園", "state": "AZ", "by": ["morio"] },
+    { "name": "ニューオーリンズ フレンチクォーター", "state": "LA", "by": ["morio"] }
   ]
 }
