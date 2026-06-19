@@ -61,6 +61,12 @@ html, body {
 }
 .top-nav a:hover { background: rgba(255, 255, 255, 0.15); }
 .top-nav a.active { background: #fff; color: var(--accent); font-weight: 700; }
+.top-nav a.nav-issues {
+  background: #1f9d55;
+  border-color: #1f9d55;
+  font-weight: 700;
+}
+.top-nav a.nav-issues:hover { background: #19833f; }
 
 /* ---- Layout ---- */
 .layout {
