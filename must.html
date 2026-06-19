@@ -3,9 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>アメリカ横断の旅</title>
-
-  <!-- Leaflet CSS -->
+  <title>みんなが行きたい — アメリカ横断の旅</title>
   <link
     rel="stylesheet"
     href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -16,14 +14,11 @@
 </head>
 <body>
   <header class="site-header">
-    <div>
-      <h1 id="trip-title">アメリカ横断の旅</h1>
-      <p id="trip-subtitle"></p>
-    </div>
+    <h1><a href="index.html" class="home-link">アメリカ横断の旅</a></h1>
     <nav class="top-nav">
-      <a href="index.html" class="active">🗺️ 地図</a>
+      <a href="index.html">🗺️ 地図</a>
       <a href="spots.html">📍 スポット集</a>
-      <a href="must.html">⭐ 行きたい</a>
+      <a href="must.html" class="active">⭐ 行きたい</a>
       <a href="states.html">🇺🇸 州別</a>
       <a href="events.html">🎪 催し</a>
       <a href="foods.html">🍴 グルメ</a>
@@ -32,34 +27,27 @@
     </nav>
   </header>
 
-  <main class="layout">
-    <section id="map" aria-label="旅程地図"></section>
+  <div class="spots-filters" id="must-filters"></div>
 
-    <aside class="itinerary" aria-label="旅程リスト">
-      <h2>旅程</h2>
-      <ol id="stop-list"></ol>
+  <main class="layout">
+    <section id="map" aria-label="みんなが行きたい地図"></section>
+    <aside class="itinerary" aria-label="行きたいリスト">
+      <h2 id="must-count">みんなが行きたい</h2>
+      <p class="event-note" id="must-note"></p>
+      <div id="must-list"></div>
     </aside>
   </main>
-
-  <!-- 各都市の詳細パネル -->
-  <div id="detail-panel" class="detail-panel hidden" role="dialog" aria-modal="true">
-    <button id="detail-close" class="detail-close" aria-label="閉じる">&times;</button>
-    <div id="detail-content"></div>
-  </div>
-  <div id="detail-backdrop" class="detail-backdrop hidden"></div>
 
   <footer class="site-footer">
     <p>Map data &copy; OpenStreetMap contributors</p>
   </footer>
 
-  <!-- Leaflet JS -->
   <script
     src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
     crossorigin=""
   ></script>
-  <!-- Markdown レンダリング (詳細md表示用) -->
-  <script src="https://unpkg.com/marked@12.0.2/marked.min.js"></script>
-  <script src="js/app.js"></script>
+  <script src="js/route-overlay.js"></script>
+  <script src="js/must.js"></script>
 </body>
 </html>
