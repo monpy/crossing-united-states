@@ -1167,7 +1167,7 @@
       "lat": 43.9925,
       "lng": -102.2419,
       "desc": "名物ロードサイド・アメリカーナ。",
-      "beta": false
+      "beta": true
     },
     {
       "cat": "culture",
@@ -1838,6 +1838,306 @@
       "lng": -122.2654,
       "desc": "アメリカ随一のワイン産地。",
       "beta": true
+    },
+    {
+      "cat": "culture",
+      "name": "キャデラック・ランチ",
+      "nameEn": "Cadillac Ranch",
+      "state": "TX",
+      "lat": 35.1872,
+      "lng": -101.9878,
+      "desc": "Route66名物、半分埋まった車の落書きアート。",
+      "beta": true
+    },
+    {
+      "cat": "culture",
+      "name": "コーン・パレス",
+      "nameEn": "The Corn Palace",
+      "state": "SD",
+      "lat": 43.7128,
+      "lng": -98.0287,
+      "desc": "トウモロコシで装飾する珍宮殿。大平原の定番。",
+      "beta": true
+    },
+    {
+      "cat": "culture",
+      "name": "カーヘンジ",
+      "nameEn": "Carhenge",
+      "state": "NE",
+      "lat": 42.1424,
+      "lng": -102.8585,
+      "desc": "廃車で作ったストーンヘンジ。寄り道に最高。",
+      "beta": false
+    },
+    {
+      "cat": "culture",
+      "name": "フィールド・オブ・ドリームス",
+      "nameEn": "Field of Dreams",
+      "state": "IA",
+      "lat": 42.4983,
+      "lng": -91.0793,
+      "desc": "映画の舞台のトウモロコシ畑の野球場。",
+      "beta": true
+    },
+    {
+      "cat": "culture",
+      "name": "ヘンリー・ドーリー動物園",
+      "nameEn": "Henry Doorly Zoo",
+      "state": "NE",
+      "lat": 41.2206,
+      "lng": -95.9247,
+      "desc": "全米屈指の動物園。オマハ泊の楽しみ。",
+      "beta": false
+    },
+    {
+      "cat": "culture",
+      "name": "オマハ・オールドマーケット",
+      "nameEn": "Omaha Old Market",
+      "state": "NE",
+      "lat": 41.256,
+      "lng": -95.927,
+      "desc": "石畳のレストラン街。横断の宿泊拠点に。",
+      "beta": false
+    },
+    {
+      "cat": "nature",
+      "name": "パイクス・ピーク",
+      "nameEn": "Pikes Peak",
+      "state": "CO",
+      "lat": 38.8409,
+      "lng": -105.0423,
+      "desc": "登山鉄道で登れる4,300m峰。",
+      "beta": true
+    },
+    {
+      "cat": "culture",
+      "name": "パール・ストリート（ボルダー）",
+      "nameEn": "Pearl Street, Boulder",
+      "state": "CO",
+      "lat": 40.0176,
+      "lng": -105.2797,
+      "desc": "歩行者天国の楽しい大学町。デンバー近郊。",
+      "beta": false
+    },
+    {
+      "cat": "nature",
+      "name": "デビルスタワー",
+      "nameEn": "Devils Tower",
+      "state": "WY",
+      "lat": 44.5902,
+      "lng": -104.7146,
+      "desc": "そびえ立つ巨大岩柱。米初の国定記念物。",
+      "beta": true
+    },
+    {
+      "cat": "culture",
+      "name": "デッドウッド",
+      "nameEn": "Deadwood",
+      "state": "SD",
+      "lat": 44.3767,
+      "lng": -103.7296,
+      "desc": "ゴールドラッシュの西部開拓の町。",
+      "beta": false
+    },
+    {
+      "cat": "nature",
+      "name": "カスター州立公園",
+      "nameEn": "Custer State Park",
+      "state": "SD",
+      "lat": 43.7494,
+      "lng": -103.4197,
+      "desc": "野生バイソンの大群とワイルドライフループ。",
+      "beta": false
+    },
+    {
+      "cat": "nature",
+      "name": "チムニーロック／スコッツブラフ",
+      "nameEn": "Chimney Rock & Scotts Bluff",
+      "state": "NE",
+      "lat": 41.8297,
+      "lng": -103.7071,
+      "desc": "オレゴン・トレイルの目印になった奇岩。",
+      "beta": false
+    },
+    {
+      "cat": "culture",
+      "name": "ガリーナ",
+      "nameEn": "Galena",
+      "state": "IL",
+      "lat": 42.4167,
+      "lng": -90.429,
+      "desc": "19世紀の街並みが残る可愛い町。一泊向け。",
+      "beta": true
+    },
+    {
+      "cat": "nature",
+      "name": "スターブド・ロック州立公園",
+      "nameEn": "Starved Rock State Park",
+      "state": "IL",
+      "lat": 41.3208,
+      "lng": -88.9939,
+      "desc": "渓谷と滝のハイキング。シカゴ近郊。",
+      "beta": false
+    },
+    {
+      "cat": "culture",
+      "name": "シティ・ミュージアム",
+      "nameEn": "City Museum",
+      "state": "MO",
+      "lat": 38.6331,
+      "lng": -90.2018,
+      "desc": "廃材で作った巨大な大人の遊び場。セントルイス。",
+      "beta": true
+    },
+    {
+      "cat": "culture",
+      "name": "ハンニバル",
+      "nameEn": "Hannibal",
+      "state": "MO",
+      "lat": 39.7084,
+      "lng": -91.3585,
+      "desc": "マーク・トウェインの故郷。ミシシッピ川の町。",
+      "beta": false
+    },
+    {
+      "cat": "nature",
+      "name": "レイク・オブ・ジ・オザークス",
+      "nameEn": "Lake of the Ozarks",
+      "state": "MO",
+      "lat": 38.1357,
+      "lng": -92.663,
+      "desc": "湖畔のリゾート。ボートと宿泊。",
+      "beta": false
+    },
+    {
+      "cat": "culture",
+      "name": "カントリークラブ・プラザ",
+      "nameEn": "Country Club Plaza",
+      "state": "MO",
+      "lat": 39.0417,
+      "lng": -94.5906,
+      "desc": "スペイン風の洒落た街区。カンザスシティ。",
+      "beta": false
+    },
+    {
+      "cat": "culture",
+      "name": "オールド・カウタウン（ウィチタ）",
+      "nameEn": "Old Cowtown, Wichita",
+      "state": "KS",
+      "lat": 37.6889,
+      "lng": -97.3361,
+      "desc": "旧西部を再現した野外博物館。",
+      "beta": false
+    },
+    {
+      "cat": "culture",
+      "name": "ドッジシティ（ブートヒル）",
+      "nameEn": "Dodge City / Boot Hill",
+      "state": "KS",
+      "lat": 37.7528,
+      "lng": -100.0171,
+      "desc": "ガンマンで知られる西部劇の町。",
+      "beta": false
+    },
+    {
+      "cat": "culture",
+      "name": "オクラホマシティ国立記念館",
+      "nameEn": "OKC National Memorial",
+      "state": "OK",
+      "lat": 35.4727,
+      "lng": -97.517,
+      "desc": "爆破事件の静かな追悼施設。",
+      "beta": false
+    },
+    {
+      "cat": "culture",
+      "name": "OKCストックヤード",
+      "nameEn": "OKC Stockyards",
+      "state": "OK",
+      "lat": 35.4564,
+      "lng": -97.555,
+      "desc": "全米最大級の牛市場とカウボーイ文化。",
+      "beta": false
+    },
+    {
+      "cat": "culture",
+      "name": "ブルー・ホエール・オブ・カトゥーサ",
+      "nameEn": "Blue Whale of Catoosa",
+      "state": "OK",
+      "lat": 36.1879,
+      "lng": -95.748,
+      "desc": "Route66名物の青いクジラ。",
+      "beta": false
+    },
+    {
+      "cat": "culture",
+      "name": "POPS 66（アーカディア）",
+      "nameEn": "POPS 66",
+      "state": "OK",
+      "lat": 35.6395,
+      "lng": -97.3258,
+      "desc": "巨大ソーダ瓶のRoute66ドライブイン。",
+      "beta": false
+    },
+    {
+      "cat": "culture",
+      "name": "ウィスコンシン・デルズ",
+      "nameEn": "Wisconsin Dells",
+      "state": "WI",
+      "lat": 43.6275,
+      "lng": -89.771,
+      "desc": "ウォーターパークの聖地。家族向け宿泊地。",
+      "beta": false
+    },
+    {
+      "cat": "culture",
+      "name": "マキナック島",
+      "nameEn": "Mackinac Island",
+      "state": "MI",
+      "lat": 45.8492,
+      "lng": -84.6189,
+      "desc": "車禁止・馬車の歴史リゾート島。",
+      "beta": true
+    },
+    {
+      "cat": "nature",
+      "name": "グレート・リバー・ロード（デュビューク）",
+      "nameEn": "Great River Road, Dubuque",
+      "state": "IA",
+      "lat": 42.5006,
+      "lng": -90.6646,
+      "desc": "ミシシッピ川沿いの景観ドライブ。",
+      "beta": false
+    },
+    {
+      "cat": "culture",
+      "name": "アマナ・コロニーズ",
+      "nameEn": "Amana Colonies",
+      "state": "IA",
+      "lat": 41.7994,
+      "lng": -91.8676,
+      "desc": "ドイツ系移民の歴史村。手仕事とビール。",
+      "beta": false
+    },
+    {
+      "cat": "culture",
+      "name": "アイオワ州会議事堂",
+      "nameEn": "Iowa State Capitol",
+      "state": "IA",
+      "lat": 41.5912,
+      "lng": -93.6037,
+      "desc": "金ドームが映えるデモイン。横断の中継地。",
+      "beta": false
+    },
+    {
+      "cat": "culture",
+      "name": "マディソン郡の橋",
+      "nameEn": "Bridges of Madison County",
+      "state": "IA",
+      "lat": 41.3306,
+      "lng": -94.0114,
+      "desc": "映画で有名な屋根付き橋。",
+      "beta": false
     }
   ]
 }
