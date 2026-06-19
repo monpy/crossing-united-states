@@ -1,7 +1,8 @@
 {
-  "_how": "みんなが行きたいスポットを記録するファイル。spots.json と同じ name（必要なら state も）で追加し、by に行きたい人の名前を並べる。note は任意の一言。編集して push すれば spots.html に ★ で反映される。",
+  "_how": "みんなが行きたいスポットを記録するファイル。spots.json と同じ name（必要なら state も）で追加し、by に行きたい人の名前を並べる。note は任意の一言。編集して push すれば must.html に ★ で反映される。",
   "must": [
     { "name": "ニューヨーク近代美術館", "state": "NY", "by": ["morio"], "note": "観たい" },
-    { "name": "自由の女神＆エリス島", "state": "NY", "by": ["morio"], "note": "観たい" }
+    { "name": "自由の女神＆エリス島", "state": "NY", "by": ["morio"], "note": "観たい" },
+    { "name": "グランドキャニオン国立公園", "state": "AZ", "by": ["morio"] }
   ]
 }
