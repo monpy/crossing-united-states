@@ -20,6 +20,29 @@
   const activeCats = new Set(Object.keys(cats));
   let routeOnly = false;
 
+  // ---- 画像URL ----
+  // foods.json に img があればそれを優先。無ければ英語名のキーワードで
+  // LoremFlickr（CC写真）から取得。lock=index で品ごとに固定の写真に。
+  const STOP = new Set(["in", "on", "of", "the", "with", "and", "a", "style", "whole", "original", "fresh"]);
+  // 料理名の最後の語（＝料理の種類になりやすい：cheesesteak / pie / lobster…）を採用。
+  // 単語1つなら Flickr の写真がヒットしやすく、関連性も高い。
+  function imgKeyword(f) {
+    const base = (f.en || f.ja).toLowerCase().replace(/\(.*?\)/g, " ");
+    const words = base
+      .replace(/[^a-z0-9 ]/g, " ")
+      .trim()
+      .split(/\s+/)
+      .filter((w) => w && !STOP.has(w));
+    return words.length ? words[words.length - 1] : "food";
+  }
+  function imgUrl(f, i) {
+    if (f.img) return f.img;
+    return `https://loremflickr.com/320/220/${imgKeyword(f)}?lock=${i}`;
+  }
+  // 404なら汎用の「food」写真にフォールバック（必ず料理の写真）、それも失敗なら隠す
+  const ONERR =
+    "if(this.dataset.fb){this.classList.add('img-failed');}else{this.dataset.fb=1;this.src='https://loremflickr.com/320/220/food?lock='+(this.dataset.i||0);}";
+
   // ---- AIに聞く（ChatGPT / Claude） ----
   function askLinksHtml(f) {
     const prompt = `アメリカ横断ドライブ旅行で「${f.ja}」(${f.en}) を食べたいです。${f.state}（${f.city}）でこれを食べるならどこの名店がおすすめ？由来や注文のコツ、似たローカル料理も教えてください。`;
@@ -47,11 +70,12 @@
     });
   }
 
-  foods.forEach((f) => {
+  foods.forEach((f, i) => {
+    f._idx = i;
     const color = (cats[f.cat] || {}).color || "#666";
     const m = L.marker([f.lat, f.lng], { icon: dot(color, f.near) });
     m.bindPopup(
-      `<strong>${f.ja}</strong>${f.near ? ' <span style="color:#c1442e">★ルート沿い</span>' : ""}<br><small>${f.en} ・ ${f.city}（${f.state}）</small><br>${f.desc || ""}${askLinksHtml(f)}`
+      `<img class="popup-thumb" src="${imgUrl(f, i)}" data-i="${i}" alt="${f.ja}" onerror="${ONERR}"><strong>${f.ja}</strong>${f.near ? ' <span style="color:#c1442e">★ルート沿い</span>' : ""}<br><small>${f.en} ・ ${f.city}（${f.state}）</small><br>${f.desc || ""}${askLinksHtml(f)}`
     );
     f._marker = m;
   });
@@ -118,6 +142,7 @@
         row.className = "spot-row";
         row.innerHTML = `
           <span class="spot-bullet" style="background:${c}"></span>
+          <img class="food-thumb" src="${imgUrl(f, f._idx)}" data-i="${f._idx}" alt="${f.ja}" onerror="${ONERR}">
           <div>
             <div class="spot-name">${f.ja} ${f.near ? '<span class="route-badge">ルート沿い</span>' : ""}</div>
             <div class="spot-en">${f.en} ・ ${f.city}（${f.state}）</div>
