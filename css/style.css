@@ -436,6 +436,33 @@ html, body {
   border: 2px solid #fff;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
+/* ルート沿いイベントは強調リング */
+.spot-dot.near {
+  box-shadow: 0 0 0 3px rgba(193, 68, 46, 0.9), 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* ---- Events ---- */
+.event-note {
+  font-size: 0.74rem;
+  color: var(--muted);
+  line-height: 1.5;
+  background: #fcf3e8;
+  border-radius: 6px;
+  padding: 8px 10px;
+  margin: 4px 0 12px;
+}
+.event-when-head {
+  font-size: 0.85rem;
+  color: var(--accent);
+  border-bottom: 1px solid var(--accent-soft);
+  padding: 4px 0;
+  margin: 14px 0 6px;
+  position: sticky;
+  top: 0;
+  background: var(--panel-bg);
+}
+.route-chip { font-weight: 700; }
+.route-chip input { accent-color: var(--accent); }
 
 /* ---- Spots: list ---- */
 .spot-group { margin-bottom: 18px; }
