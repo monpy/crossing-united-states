@@ -641,6 +641,23 @@ html, body {
 .legend-item { display: inline-flex; align-items: center; gap: 5px; font-size: 0.78rem; color: var(--muted); }
 .legend-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
 
+#states-map {
+  height: 460px;
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  margin-top: 16px;
+  background: #eef2f4;
+}
+.map-hint { font-size: 0.78rem; color: var(--muted); margin: 6px 2px 0; }
+.state-card.flash {
+  animation: cardflash 1.6s ease;
+}
+@keyframes cardflash {
+  0%, 100% { box-shadow: none; }
+  20% { box-shadow: 0 0 0 3px var(--accent), 0 6px 20px rgba(193,68,46,0.35); }
+}
+
 .region-section { margin-top: 28px; }
 .region-title {
   color: var(--accent);

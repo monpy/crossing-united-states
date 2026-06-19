@@ -60,6 +60,33 @@
     { "name": "デザート・デイズ", "en": "Desert Daze", "city": "南カリフォルニア", "state": "CA", "month": 10, "phase": 1, "cat": "music", "near": false, "lat": 33.8550, "lng": -117.1800, "desc": "サイケ/インディー色の濃い砂漠のフェス。" },
     { "name": "ピーカン／南部の収穫祭各種", "en": "Southern Harvest Festivals", "city": "南部各地", "state": "GA", "month": 10, "phase": 2, "cat": "food", "near": false, "lat": 32.8407, "lng": -83.6324, "desc": "ピーカンや綿の収穫を祝う小さな町の祭りが各地で。" },
     { "name": "アルバカーキ近郊のグリーンチリ収穫", "en": "Green Chile Harvest", "city": "ニューメキシコ各地", "state": "NM", "month": 9, "phase": 2, "cat": "food", "near": true, "lat": 35.0844, "lng": -106.6504, "desc": "道端でグリーンチリを焙煎する香り＝NMの秋の風物詩。" },
-    { "name": "ボストン界隈の紅葉ドライブ", "en": "New Hampshire Kancamagus", "city": "カンカマガス・ハイウェイ", "state": "NH", "month": 10, "phase": 2, "cat": "season", "near": false, "lat": 44.0023, "lng": -71.4112, "desc": "紅葉ドライブの名道。10月中旬がピーク。" }
+    { "name": "ボストン界隈の紅葉ドライブ", "en": "New Hampshire Kancamagus", "city": "カンカマガス・ハイウェイ", "state": "NH", "month": 10, "phase": 2, "cat": "season", "near": false, "lat": 44.0023, "lng": -71.4112, "desc": "紅葉ドライブの名道。10月中旬がピーク。" },
+
+    { "name": "ロストランズ・ミュージックフェス", "en": "Lost Lands Music Festival", "city": "ソーンビル", "state": "OH", "month": 9, "phase": 3, "cat": "music", "near": false, "lat": 39.8967, "lng": -82.4143, "desc": "全米最大級のダブステップ/EDMフェス。" },
+    { "name": "イマジン・ミュージックフェス", "en": "Imagine Music Festival", "city": "キングストン（アトランタ近郊）", "state": "GA", "month": 9, "phase": 3, "cat": "music", "near": false, "lat": 34.2360, "lng": -84.9430, "desc": "水辺で開かれるエレクトロニックフェス。" },
+    { "name": "ワールド・チキン・フェスティバル", "en": "World Chicken Festival", "city": "ロンドン", "state": "KY", "month": 9, "phase": 3, "cat": "food", "near": false, "lat": 37.1289, "lng": -84.0833, "desc": "巨大フライパンで揚げるフライドチキン祭り。" },
+    { "name": "バーンズビル・パンプキン・フェス", "en": "Barnesville Pumpkin Festival", "city": "バーンズビル", "state": "OH", "month": 9, "phase": 3, "cat": "food", "near": false, "lat": 39.9884, "lng": -81.1740, "desc": "巨大カボチャの計量大会で有名。" },
+    { "name": "ニューメキシコ州フェア", "en": "New Mexico State Fair", "city": "アルバカーキ", "state": "NM", "month": 9, "phase": 3, "cat": "culture", "near": true, "lat": 35.0966, "lng": -106.5811, "desc": "ロデオ・先住民文化・グルメの州フェア。" },
+    { "name": "サンファン・スカイウェイの黄葉", "en": "San Juan Skyway Foliage", "city": "リッジウェイ／ウーレイ", "state": "CO", "month": 9, "phase": 3, "cat": "season", "near": true, "lat": 38.1473, "lng": -107.7546, "desc": "ロッキー南部の黄葉ドライブ。9月下旬が見頃。" },
+    { "name": "カンザスシティ・ルネサンス・フェス", "en": "Kansas City Renaissance Festival", "city": "ボナースプリングス", "state": "KS", "month": 9, "phase": 3, "cat": "culture", "near": false, "lat": 39.0997, "lng": -94.8830, "desc": "中世風の仮装フェア。週末開催で10月まで。" },
+
+    { "name": "アフターショック・フェスティバル", "en": "Aftershock Festival", "city": "サクラメント", "state": "CA", "month": 10, "phase": 1, "cat": "music", "near": true, "lat": 38.6489, "lng": -121.5089, "desc": "西海岸最大級のロック/メタル・フェス。" },
+    { "name": "フライバーグ・フェア", "en": "Fryeburg Fair", "city": "フライバーグ", "state": "ME", "month": 10, "phase": 1, "cat": "food", "near": false, "lat": 44.0170, "lng": -70.9803, "desc": "メイン最大の農業フェア。紅葉も同時期。" },
+    { "name": "ジョージア・ナショナル・フェア", "en": "Georgia National Fair", "city": "ペリー", "state": "GA", "month": 10, "phase": 1, "cat": "food", "near": false, "lat": 32.4502, "lng": -83.7461, "desc": "南部の大規模ステートフェア。" },
+    { "name": "アッパー半島の紅葉（ピクチャードロックス）", "en": "Upper Peninsula Fall Color", "city": "ピクチャードロックス", "state": "MI", "month": 10, "phase": 1, "cat": "season", "near": false, "lat": 46.5000, "lng": -86.4600, "desc": "五大湖畔の断崖と紅葉。10月上旬が見頃。" },
+
+    { "name": "ウェン・ウィー・ワー・ヤング", "en": "When We Were Young", "city": "ラスベガス", "state": "NV", "month": 10, "phase": 2, "cat": "music", "near": true, "lat": 36.0897, "lng": -115.1761, "desc": "エモ/ポップパンクの大型フェス。" },
+    { "name": "セドナ・アーツ・フェスティバル", "en": "Sedona Arts Festival", "city": "セドナ", "state": "AZ", "month": 10, "phase": 2, "cat": "film", "near": true, "lat": 34.8697, "lng": -111.7610, "desc": "赤い岩山の町の屋外アート市。" },
+    { "name": "テルライド・ホラーショー", "en": "Telluride Horror Show", "city": "テルライド", "state": "CO", "month": 10, "phase": 2, "cat": "film", "near": true, "lat": 37.9375, "lng": -107.8123, "desc": "山あいの町のホラー映画祭。" },
+    { "name": "グレート・ジャック・オ・ランタン・ブレイズ", "en": "Great Jack O'Lantern Blaze", "city": "クロトン・オン・ハドソン", "state": "NY", "month": 10, "phase": 2, "cat": "culture", "near": false, "lat": 41.2265, "lng": -73.8807, "desc": "数千個のカボチャ提灯が灯る幻想イベント。" },
+
+    { "name": "ムーアブ・ホーダウン（MTBフェス）", "en": "Moab Ho-Down", "city": "モアブ", "state": "UT", "month": 10, "phase": 3, "cat": "culture", "near": true, "lat": 38.5733, "lng": -109.5498, "desc": "マウンテンバイク＋仮装パーティの秋祭り。ルート沿い。" },
+    { "name": "ザイオンの紅葉", "en": "Zion Fall Colors", "city": "ザイオン国立公園", "state": "UT", "month": 10, "phase": 3, "cat": "season", "near": true, "lat": 37.2982, "lng": -113.0263, "desc": "赤い峡谷と黄葉のコントラスト。10月下旬。" },
+    { "name": "ノースカロライナ州フェア", "en": "North Carolina State Fair", "city": "ローリー", "state": "NC", "month": 10, "phase": 3, "cat": "food", "near": false, "lat": 35.7211, "lng": -78.6975, "desc": "南東部最大級のステートフェア。" },
+    { "name": "ヘッド・オブ・ザ・チャールズ・レガッタ", "en": "Head of the Charles Regatta", "city": "ボストン", "state": "MA", "month": 10, "phase": 3, "cat": "culture", "near": false, "lat": 42.3700, "lng": -71.1233, "desc": "世界最大級のボート競漕大会。紅葉の川辺。" },
+    { "name": "スワニー・ハロウィーン", "en": "Suwannee Hulaween", "city": "リブオーク", "state": "FL", "month": 10, "phase": 3, "cat": "music", "near": false, "lat": 30.3855, "lng": -82.9543, "desc": "森の中のジャム/エレクトロニカ＋仮装フェス。" },
+    { "name": "ファンタジー・フェスト", "en": "Fantasy Fest", "city": "キーウェスト", "state": "FL", "month": 10, "phase": 3, "cat": "culture", "near": false, "lat": 24.5551, "lng": -81.7800, "desc": "キーウェストの10日間の大人の仮装祭り。" },
+    { "name": "ウェストハリウッド・ハロウィン・カーニバル", "en": "West Hollywood Halloween Carnaval", "city": "ウェストハリウッド", "state": "CA", "month": 10, "phase": 3, "cat": "culture", "near": false, "lat": 34.0900, "lng": -118.3852, "desc": "全米最大級のハロウィン・ストリートパーティ。" },
+    { "name": "死者の日（ディア・デ・ロス・ムエルトス）", "en": "Día de los Muertos", "city": "サンアントニオ", "state": "TX", "month": 10, "phase": 3, "cat": "culture", "near": false, "lat": 29.4241, "lng": -98.4936, "desc": "メキシコ系文化の彩り豊かな追悼祭（10月末〜11月初）。" }
   ]
 }

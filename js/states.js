@@ -84,6 +84,7 @@
 
         const card = document.createElement("div");
         card.className = "state-card";
+        card.id = `state-${st.abbr}`;
         card.style.setProperty("--safety", lv.color || "#999");
         card.innerHTML = `
           <div class="state-head">
@@ -115,4 +116,86 @@
   });
 
   render();
+
+  // ---- 安全度の色塗り地図（コロプレス） ----
+  // 州名(英語フル)→ state オブジェクト。DCは GeoJSON 上の名称が異なるため別名対応。
+  const byGeoName = {};
+  states.states.forEach((st) => {
+    byGeoName[st.en] = st;
+  });
+  byGeoName["District of Columbia"] = byGeoName["Washington, D.C."];
+
+  function flashCard(abbr) {
+    const card = document.getElementById(`state-${abbr}`);
+    if (!card) return;
+    card.scrollIntoView({ behavior: "smooth", block: "center" });
+    card.classList.add("flash");
+    setTimeout(() => card.classList.remove("flash"), 1600);
+  }
+
+  try {
+    const geo = await (await fetch("data/us-states.geojson")).json();
+    const mapEl = document.getElementById("states-map");
+    const map = L.map(mapEl, {
+      scrollWheelZoom: false,
+      zoomControl: true,
+      attributionControl: false,
+    });
+
+    function styleFor(feature) {
+      const st = byGeoName[feature.properties.name];
+      const lv = st ? levels[st.safety] : null;
+      return {
+        fillColor: lv ? lv.color : "#cccccc",
+        fillOpacity: 0.55,
+        color: st && st.route ? "#1f2937" : "#ffffff",
+        weight: st && st.route ? 2.5 : 1,
+      };
+    }
+
+    const layer = L.geoJSON(geo, {
+      style: styleFor,
+      onEachFeature: (feature, lyr) => {
+        const st = byGeoName[feature.properties.name];
+        if (!st) return;
+        const lv = levels[st.safety] || {};
+        lyr.bindTooltip(
+          `<strong>${st.ja}</strong>（${st.abbr}）<br>${lv.label}${st.route ? "<br>★横断ルート上" : ""}`,
+          { sticky: true }
+        );
+        lyr.on({
+          mouseover: (e) => e.target.setStyle({ fillOpacity: 0.8, weight: 3 }),
+          mouseout: (e) => layer.resetStyle(e.target),
+          click: () => flashCard(st.abbr),
+        });
+      },
+    }).addTo(map);
+
+    // 本土48州にフィット（アラスカ・ハワイは脇に描画され、パンで見られる）
+    const CONUS = L.latLngBounds([24.5, -125.0], [49.5, -66.5]);
+    const fit = () => map.fitBounds(CONUS, { padding: [6, 6] });
+    fit();
+    // コンテナの幅が確定/変化したらサイズ再計算して再フィット
+    // （初期表示時に幅が0でも、レイアウト確定後に正しく描画される）
+    if (window.ResizeObserver) {
+      let lastW = 0;
+      const ro = new ResizeObserver(() => {
+        const w = mapEl.clientWidth;
+        if (w > 0 && w !== lastW) {
+          lastW = w;
+          map.invalidateSize();
+          fit();
+        }
+      });
+      ro.observe(mapEl);
+    }
+    // 念のため遅延でも一度リフレッシュ
+    setTimeout(() => {
+      map.invalidateSize();
+      fit();
+    }, 300);
+  } catch (e) {
+    document.getElementById("states-map").style.display = "none";
+    console.error("地図の読み込みに失敗:", e);
+  }
 })();
