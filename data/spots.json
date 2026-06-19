@@ -15,6 +15,10 @@
     "culture": {
       "label": "🏛️ 文化",
       "color": "#c1442e"
+    },
+    "camp": {
+      "label": "🏕️ キャンプ",
+      "color": "#0d8a72"
     }
   },
   "note": "座標は地図ピン用の概算。ルート検討の出発点としてご利用ください。",
@@ -2137,6 +2141,306 @@
       "lat": 41.3306,
       "lng": -94.0114,
       "desc": "映画で有名な屋根付き橋。",
+      "beta": false
+    },
+    {
+      "cat": "camp",
+      "name": "アッパー・パインズ（ヨセミテ）",
+      "nameEn": "Upper Pines, Yosemite",
+      "state": "CA",
+      "lat": 37.738,
+      "lng": -119.568,
+      "desc": "渓谷の真ん中で泊まる絶景キャンプ。要予約。",
+      "beta": true
+    },
+    {
+      "cat": "camp",
+      "name": "ジェニー・レイク（グランドティトン）",
+      "nameEn": "Jenny Lake, Grand Teton",
+      "state": "WY",
+      "lat": 43.7515,
+      "lng": -110.727,
+      "desc": "湖と岩峰を望む人気サイト。",
+      "beta": true
+    },
+    {
+      "cat": "camp",
+      "name": "マディソン（イエローストーン）",
+      "nameEn": "Madison, Yellowstone",
+      "state": "WY",
+      "lat": 44.646,
+      "lng": -110.861,
+      "desc": "間欠泉巡りの拠点キャンプ。",
+      "beta": false
+    },
+    {
+      "cat": "camp",
+      "name": "メニー・グレイシャー（グレイシャー）",
+      "nameEn": "Many Glacier, Glacier NP",
+      "state": "MT",
+      "lat": 48.797,
+      "lng": -113.658,
+      "desc": "氷河湖の絶景。公園屈指の人気。",
+      "beta": true
+    },
+    {
+      "cat": "camp",
+      "name": "ザ・ウォッチマン（ザイオン）",
+      "nameEn": "Watchman, Zion",
+      "state": "UT",
+      "lat": 37.199,
+      "lng": -112.987,
+      "desc": "赤い岸壁の麓。公園入口で便利。",
+      "beta": false
+    },
+    {
+      "cat": "camp",
+      "name": "ジャンボ・ロックス（ジョシュアツリー）",
+      "nameEn": "Jumbo Rocks, Joshua Tree",
+      "state": "CA",
+      "lat": 33.993,
+      "lng": -116.061,
+      "desc": "巨岩に囲まれ星空が降る名物サイト。",
+      "beta": true
+    },
+    {
+      "cat": "camp",
+      "name": "カーク・クリーク（ビッグサー）",
+      "nameEn": "Kirk Creek, Big Sur",
+      "state": "CA",
+      "lat": 35.992,
+      "lng": -121.494,
+      "desc": "太平洋を見下ろす崖上キャンプ。",
+      "beta": true
+    },
+    {
+      "cat": "camp",
+      "name": "ブラックウッズ（アケーディア）",
+      "nameEn": "Blackwoods, Acadia",
+      "state": "ME",
+      "lat": 44.303,
+      "lng": -68.206,
+      "desc": "大西洋岸の森で朝日を。",
+      "beta": false
+    },
+    {
+      "cat": "camp",
+      "name": "アサティーグ島",
+      "nameEn": "Assateague Island",
+      "state": "MD",
+      "lat": 38.056,
+      "lng": -75.143,
+      "desc": "野生の馬がいるビーチで泊まれる。",
+      "beta": true
+    },
+    {
+      "cat": "camp",
+      "name": "カラロック（オリンピック）",
+      "nameEn": "Kalaloch, Olympic NP",
+      "state": "WA",
+      "lat": 47.612,
+      "lng": -124.374,
+      "desc": "波音を聞く海辺の林間サイト。",
+      "beta": false
+    },
+    {
+      "cat": "camp",
+      "name": "ピニョン・フラッツ（グレートサンドデューンズ）",
+      "nameEn": "Piñon Flats, Great Sand Dunes",
+      "state": "CO",
+      "lat": 37.733,
+      "lng": -105.512,
+      "desc": "砂丘を望む高原キャンプ。星空も。",
+      "beta": false
+    },
+    {
+      "cat": "camp",
+      "name": "デッドホース・ポイント州立公園（モアブ）",
+      "nameEn": "Dead Horse Point SP, Moab",
+      "state": "UT",
+      "lat": 38.481,
+      "lng": -109.74,
+      "desc": "断崖に張り出す絶景。アーチーズ近郊。",
+      "beta": true
+    },
+    {
+      "cat": "camp",
+      "name": "ケイブ・スプリングス（セドナ）",
+      "nameEn": "Cave Springs, Sedona",
+      "state": "AZ",
+      "lat": 34.987,
+      "lng": -111.737,
+      "desc": "オーククリーク沿いの緑のサイト。",
+      "beta": false
+    },
+    {
+      "cat": "camp",
+      "name": "エメラルド・ベイ州立公園（タホ湖）",
+      "nameEn": "Emerald Bay SP, Lake Tahoe",
+      "state": "CA",
+      "lat": 38.954,
+      "lng": -120.109,
+      "desc": "透明な湖の入江を望む人気キャンプ。",
+      "beta": true
+    },
+    {
+      "cat": "camp",
+      "name": "クーガー・ロック（レーニア）",
+      "nameEn": "Cougar Rock, Mount Rainier",
+      "state": "WA",
+      "lat": 46.77,
+      "lng": -121.79,
+      "desc": "高山植物と氷河の麓。",
+      "beta": false
+    },
+    {
+      "cat": "camp",
+      "name": "ロッジポール（セコイア）",
+      "nameEn": "Lodgepole, Sequoia",
+      "state": "CA",
+      "lat": 36.603,
+      "lng": -118.724,
+      "desc": "巨大セコイアの森でキャンプ。",
+      "beta": false
+    },
+    {
+      "cat": "camp",
+      "name": "セージ・クリーク（バッドランズ）",
+      "nameEn": "Sage Creek, Badlands",
+      "state": "SD",
+      "lat": 43.893,
+      "lng": -102.447,
+      "desc": "無料・予約不要。バイソンが歩く荒野。",
+      "beta": true
+    },
+    {
+      "cat": "camp",
+      "name": "ホワイトサンズ・バックカントリー",
+      "nameEn": "White Sands Backcountry",
+      "state": "NM",
+      "lat": 32.779,
+      "lng": -106.172,
+      "desc": "真っ白な砂丘に泊まる特別体験。",
+      "beta": false
+    },
+    {
+      "cat": "camp",
+      "name": "フラミンゴ（エバーグレーズ）",
+      "nameEn": "Flamingo, Everglades",
+      "state": "FL",
+      "lat": 25.141,
+      "lng": -80.924,
+      "desc": "亜熱帯湿地で星空とワニ。冬がベスト。",
+      "beta": false
+    },
+    {
+      "cat": "camp",
+      "name": "マザー（グランドキャニオン）",
+      "nameEn": "Mather, Grand Canyon South Rim",
+      "state": "AZ",
+      "lat": 36.053,
+      "lng": -112.108,
+      "desc": "大峡谷サウスリムの定番キャンプ。",
+      "beta": true
+    },
+    {
+      "cat": "camp",
+      "name": "デビルス・ガーデン（アーチーズ）",
+      "nameEn": "Devils Garden, Arches",
+      "state": "UT",
+      "lat": 38.782,
+      "lng": -109.588,
+      "desc": "アーチ群の中で泊まる唯一のサイト。",
+      "beta": false
+    },
+    {
+      "cat": "camp",
+      "name": "ドライ・トートゥガス",
+      "nameEn": "Dry Tortugas NP",
+      "state": "FL",
+      "lat": 24.628,
+      "lng": -82.873,
+      "desc": "船でしか行けない孤島の砦でキャンプ。",
+      "beta": true
+    },
+    {
+      "cat": "camp",
+      "name": "バウンダリー・ウォーターズ",
+      "nameEn": "Boundary Waters",
+      "state": "MN",
+      "lat": 47.95,
+      "lng": -91.5,
+      "desc": "カヌーで分け入る湖水の大自然。",
+      "beta": true
+    },
+    {
+      "cat": "camp",
+      "name": "アポストル諸島",
+      "nameEn": "Apostle Islands",
+      "state": "WI",
+      "lat": 46.97,
+      "lng": -90.66,
+      "desc": "海食洞とカヤックの島キャンプ。",
+      "beta": false
+    },
+    {
+      "cat": "camp",
+      "name": "チソス・ベイスン（ビッグベンド）",
+      "nameEn": "Chisos Basin, Big Bend",
+      "state": "TX",
+      "lat": 29.27,
+      "lng": -103.3,
+      "desc": "全米屈指の暗い夜空。砂漠の山に囲まれて。",
+      "beta": true
+    },
+    {
+      "cat": "camp",
+      "name": "アラバマ・ヒルズ（ローンパイン）",
+      "nameEn": "Alabama Hills, Lone Pine",
+      "state": "CA",
+      "lat": 36.606,
+      "lng": -118.118,
+      "desc": "無料BLM。シエラの雪山と奇岩。",
+      "beta": true
+    },
+    {
+      "cat": "camp",
+      "name": "バレー・オブ・ファイア州立公園",
+      "nameEn": "Valley of Fire SP",
+      "state": "NV",
+      "lat": 36.479,
+      "lng": -114.515,
+      "desc": "燃えるような赤い岩。ベガス近郊。",
+      "beta": false
+    },
+    {
+      "cat": "camp",
+      "name": "カンバーランド島",
+      "nameEn": "Cumberland Island",
+      "state": "GA",
+      "lat": 30.833,
+      "lng": -81.45,
+      "desc": "野生馬と原生林の静かな島。",
+      "beta": false
+    },
+    {
+      "cat": "camp",
+      "name": "バッファロー国立リバー",
+      "nameEn": "Buffalo National River",
+      "state": "AR",
+      "lat": 36.034,
+      "lng": -92.756,
+      "desc": "清流のカヌーと川辺キャンプ。",
+      "beta": false
+    },
+    {
+      "cat": "camp",
+      "name": "ホッキングヒルズ州立公園",
+      "nameEn": "Hocking Hills SP",
+      "state": "OH",
+      "lat": 39.43,
+      "lng": -82.54,
+      "desc": "渓谷と滝の人気サイト。中西部の癒し。",
       "beta": false
     }
   ]
