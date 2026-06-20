@@ -47,7 +47,9 @@ html, body {
 .top-nav {
   display: flex;
   gap: 8px;
-  flex-shrink: 0;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  min-width: 0;
 }
 .top-nav a {
   color: #fff;
@@ -797,14 +799,18 @@ html, body {
 .state-nospot a { color: var(--accent); }
 
 /* ---- Responsive ---- */
-@media (max-width: 760px) {
+@media (max-width: 900px) {
   .spots-filters + .layout { height: auto; }
   .layout { flex-direction: column; height: auto; }
   #map { height: 55vh; flex-basis: auto; }
   .itinerary { flex-basis: auto; max-width: 100%; border-left: none; border-top: 1px solid var(--line); }
 
-  .site-header { flex-wrap: wrap; }
-  .top-nav { width: 100%; }
+  .site-header { flex-wrap: wrap; padding: 10px 16px; gap: 8px; }
+  .site-header h1 { font-size: 1.2rem; }
+  .site-header p { font-size: 0.8rem; }
+  /* ナビは折り返して全項目を表示（はみ出して切れないように） */
+  .top-nav { width: 100%; justify-content: flex-start; gap: 6px; }
+  .top-nav a { padding: 5px 11px; font-size: 0.82rem; }
 
   .wiki-sidebar {
     position: fixed;
@@ -825,6 +831,6 @@ html, body {
 }
 
 /* 中間幅では右目次を隠す */
-@media (max-width: 1080px) and (min-width: 761px) {
+@media (max-width: 1080px) and (min-width: 901px) {
   .wiki-toc { display: none; }
 }
