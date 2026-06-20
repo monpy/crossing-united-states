@@ -242,9 +242,23 @@
   });
   render();
 
-  // モバイル用サイドバー開閉
-  const toggle = document.getElementById("sidebar-toggle");
-  toggle.addEventListener("click", () =>
-    document.body.classList.toggle("sidebar-open")
+  // サイドバー（ページ一覧）の開閉
+  const burger = document.getElementById("wiki-burger");
+  const backdrop = document.getElementById("wiki-backdrop");
+  function setSidebar(open) {
+    document.body.classList.toggle("sidebar-open", open);
+    if (burger) burger.setAttribute("aria-expanded", open ? "true" : "false");
+    if (backdrop) backdrop.hidden = !open;
+  }
+  if (burger) burger.addEventListener("click", () =>
+    setSidebar(!document.body.classList.contains("sidebar-open"))
+  );
+  if (backdrop) backdrop.addEventListener("click", () => setSidebar(false));
+  // ページを選んだら閉じる（renderでsidebar-openは外れるのでbackdropも閉じる）
+  navListEl.addEventListener("click", () => setSidebar(false));
+  // 旧トグル（存在すれば）も一応配線
+  const legacy = document.getElementById("sidebar-toggle");
+  if (legacy) legacy.addEventListener("click", () =>
+    setSidebar(!document.body.classList.contains("sidebar-open"))
   );
 })();

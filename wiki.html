@@ -8,7 +8,10 @@
 </head>
 <body class="wiki-body">
   <header class="site-header">
-    <h1><a href="index.html" class="home-link">アメリカ横断の旅</a></h1>
+    <div class="header-left">
+      <button class="wiki-burger" id="wiki-burger" aria-label="ページ一覧を開く" aria-expanded="false">☰ 目次</button>
+      <h1><a href="index.html" class="home-link">アメリカ横断の旅</a></h1>
+    </div>
     <nav class="top-nav">
       <a href="index.html">🗺️ 地図</a>
       <a href="spots.html">📍 スポット集</a>
@@ -20,6 +23,8 @@
       <a href="https://github.com/monpy/crossing-united-states/issues" target="_blank" rel="noopener" class="nav-issues">✅ 準備タスク</a>
     </nav>
   </header>
+
+  <div class="wiki-backdrop" id="wiki-backdrop" hidden></div>
 
   <div class="wiki-layout">
     <!-- サイドバー（ページ一覧） -->
@@ -43,8 +48,6 @@
       <nav id="toc-list"></nav>
     </aside>
   </div>
-
-  <button class="sidebar-toggle" id="sidebar-toggle" aria-label="メニュー">☰</button>
 
   <script src="https://unpkg.com/marked@12.0.2/marked.min.js"></script>
   <script src="js/wiki.js"></script>
