@@ -6,6 +6,7 @@
     { "name": "グランドキャニオン国立公園", "state": "AZ", "by": ["morio"] },
     { "name": "ニューオーリンズ フレンチクォーター", "state": "LA", "by": ["morio"] },
     { "name": "ヨセミテ国立公園", "state": "CA", "by": ["mj"], "note": "行きたい" },
-    { "name": "モニュメントバレー", "state": "AZ/UT", "by": ["mj"], "note": "行きたい" }
+    { "name": "モニュメントバレー", "state": "AZ/UT", "by": ["mj"], "note": "行きたい" },
+    { "name": "シカゴ美術館", "state": "IL", "by": ["mj"], "note": "行きたい" }
   ]
 }
