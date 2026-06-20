@@ -9,6 +9,7 @@
     { "slug": "checklist", "title": "🎒 必要なもの", "file": "content/05-checklist.md" },
     { "slug": "driving", "title": "🛣️ 運転のコツ", "file": "content/06-driving.md" },
     { "slug": "resources", "title": "🔗 宿・給油リンク集", "file": "content/07-resources.md" },
+    { "slug": "camping", "title": "🏕️ 国立公園キャンプ", "file": "content/09-camping.md" },
     { "slug": "trump", "title": "🇺🇸 ドナルド・トランプ", "file": "content/08-trump.md" }
   ]
 }
