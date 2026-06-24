@@ -1044,6 +1044,15 @@
       "beta": true
     },
     {
+      "cat": "music",
+      "name": "スフィア（ライブ鑑賞）",
+      "nameEn": "Sphere Las Vegas",
+      "state": "NV",
+      "lat": 36.1207,
+      "lng": -115.1626,
+      "desc": "球体型の次世代ライブ会場。内外を覆う巨大LEDと没入音響でしか味わえない唯一無二の体験。公演スケジュール・チケットは要事前確認。"
+    },
+    {
       "cat": "culture",
       "name": "ハリウッド・ウォーク・オブ・フェイム",
       "nameEn": "Hollywood Walk of Fame",

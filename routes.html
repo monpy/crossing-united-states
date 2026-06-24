@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>9-10月の催し — アメリカ横断の旅</title>
+  <title>ルート比較 — アメリカ横断の旅</title>
   <link
     rel="stylesheet"
     href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -17,25 +17,25 @@
     <h1><a href="index.html" class="home-link">アメリカ横断の旅</a></h1>
     <nav class="top-nav">
       <a href="index.html">🗺️ 地図</a>
-      <a href="routes.html">🛣️ ルート</a>
+      <a href="routes.html" class="active">🛣️ ルート</a>
       <a href="spots.html">📍 スポット集</a>
       <a href="must.html">⭐ 行きたい</a>
       <a href="states.html">🇺🇸 州別</a>
-      <a href="events.html" class="active">🎪 催し</a>
+      <a href="events.html">🎪 催し</a>
       <a href="foods.html">🍴 グルメ</a>
       <a href="wiki.html">📚 Wiki</a>
       <a href="https://github.com/monpy/crossing-united-states/issues" target="_blank" rel="noopener" class="nav-issues">✅ 準備タスク</a>
     </nav>
   </header>
 
-  <div class="spots-filters" id="event-filters"></div>
+  <div class="spots-filters" id="route-switch"></div>
 
   <main class="layout">
-    <section id="map" aria-label="イベント地図"></section>
-    <aside class="itinerary" aria-label="イベント一覧">
-      <h2 id="event-count">9〜10月の催し</h2>
-      <p class="event-note" id="event-note"></p>
-      <div id="event-list"></div>
+    <section id="map" aria-label="ルート比較地図"></section>
+    <aside class="itinerary" aria-label="ルート案リスト">
+      <h2 id="route-heading">ルート案を比較</h2>
+      <p class="event-note" id="route-note"></p>
+      <div id="route-cards"></div>
     </aside>
   </main>
 
@@ -48,7 +48,6 @@
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
     crossorigin=""
   ></script>
-  <script src="js/route-overlay.js"></script>
-  <script src="js/events.js"></script>
+  <script src="js/routes.js"></script>
 </body>
 </html>

@@ -6,7 +6,19 @@ window.RouteOverlay = {
     let stops = [];
     try {
       const data = await (await fetch("data/itinerary.json")).json();
-      stops = data.stops || [];
+      // variations[] の場合は、地図に出せる地点が最も多い案を代表として重ねる
+      const mappable = (s) =>
+        s.type !== "air" && !s.tbd && typeof s.lat === "number" && typeof s.lng === "number";
+      if (data.variations && data.variations.length) {
+        let best = [];
+        data.variations.forEach((v) => {
+          const m = (v.stops || []).filter(mappable);
+          if (m.length > best.length) best = m;
+        });
+        stops = best;
+      } else {
+        stops = (data.stops || []).filter(mappable);
+      }
     } catch (e) {
       console.error("ルートデータの読み込みに失敗しました", e);
     }
