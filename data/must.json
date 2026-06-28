@@ -8,6 +8,8 @@
     { "name": "ヨセミテ国立公園", "state": "CA", "by": ["mj"], "note": "行きたい" },
     { "name": "モニュメントバレー", "state": "AZ/UT", "by": ["mj"], "note": "行きたい" },
     { "name": "シカゴ美術館", "state": "IL", "by": ["mj"], "note": "行きたい" },
-    { "name": "スフィア（ライブ鑑賞）", "state": "NV", "by": ["mj"], "note": "Sphereでライブを観たい" }
+    { "name": "スフィア（ライブ鑑賞）", "state": "NV", "by": ["mj"], "note": "Sphereでライブを観たい" },
+    { "name": "コンピュータ歴史博物館", "state": "CA", "by": ["morio"] },
+    { "name": "Googleplex", "state": "CA", "by": ["morio"] }
   ]
 }
